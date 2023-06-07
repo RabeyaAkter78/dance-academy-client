@@ -2,7 +2,7 @@
 const Footer = () => {
     return (
         <div>
-            <footer className="footer p-10 bg-base-200 text-base-content">
+            <footer className="footer p-10 bg-base-300 text-base-content">
                 <div>
                     <span className="footer-title">Services</span>
                     <a className="link link-hover">Branding</a>
@@ -24,9 +24,9 @@ const Footer = () => {
                     <a className="link link-hover">Cookie policy</a>
                 </div>
             </footer>
-            <footer className="footer px-10 py-4 border-t bg-base-200 text-base-content border-base-300">
+            <footer className="footer px-10 py-4 border-t bg-base-content text-white  border-base-300">
                 <div className="items-center grid-flow-col">
-                <img className="h-20 w-20 rounded-full" src="https://i.ibb.co/fq7QBw3/dance-studio-logo-young-ballerina-logo-hand-written-sign-ballet-dance-studio-silhouette-young-dancer.jpg" alt="" />
+                <img src="https://i.ibb.co/W68BLYR/dancelogo.png" alt="" />
                     <p>ACME Industries Ltd. <br />Providing reliable tech since 1992</p>
                 </div>
                 <div className="md:place-self-center md:justify-self-end">
@@ -37,7 +37,7 @@ const Footer = () => {
                     </div>
                 </div>
             </footer>
-            <footer className="footer footer-center p-4 bg-base-300 text-base-content">
+            <footer className="footer footer-center p-4  bg-base-content text-white">
                 <div>
                     <p>Copyright © 2023 - All right reserved by ACME Industries Ltd</p>
                 </div>

@@ -26,7 +26,7 @@ const NavBar = () => {
                         </ul>
                     </div>
                     < >
-                        <img className="h-12 w-12 rounded-full" src="https://i.ibb.co/fq7QBw3/dance-studio-logo-young-ballerina-logo-hand-written-sign-ballet-dance-studio-silhouette-young-dancer.jpg" alt="" />
+                        <img  src="https://i.ibb.co/W68BLYR/dancelogo.png" alt="" />
 
                     </>
                 </div>
