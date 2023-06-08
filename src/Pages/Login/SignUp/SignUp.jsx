@@ -2,22 +2,49 @@
 import { useContext } from "react";
 import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Providers/AuthProvider";
+import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import app from "../../../firebase.config";
+
+
+
+const auth = getAuth(app);
 
 const SignUp = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const { createUser } = useContext(AuthContext);
 
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
+
     const onSubmit = data => {
         console.log(data)
-        createUser(data.name, data.email,data.photoUrl, data.password, data.confirmPassword, data.contactNumber, data.address, data.gender)
+
+        createUser(data.email, data.password)
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
             })
 
     };
+    // login with google:
+    const provider = new GoogleAuthProvider();
+
+    const handleLogInWithGoogle = () => {
+
+        signInWithPopup(auth, provider)
+            .then(() => {
+
+                navigate(from, { replace: true });
+
+            })
+            .catch(error => {
+                console.log(error.message);
+            })
+    }
+
 
     return (
         <div>
@@ -28,7 +55,7 @@ const SignUp = () => {
                 <div className="hero-content flex-col lg:flex-row">
 
                     <div className="card flex-shrink-0 w-full max-w-md shadow-2xl ">
-                        <form onSubmit={handleSubmit(onSubmit)} className="card-body text-white">
+                        <form onSubmit={handleSubmit(onSubmit)} className="card-body ">
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text text-white">Name</span>
@@ -66,7 +93,7 @@ const SignUp = () => {
                                 <label className="label">
                                     <span className="label-text text-white">Gender</span>
                                 </label>
-                              
+
                                 <select className="input input-bordered " placeholder="Gender" {...register("gender")}>
                                     <option className="text-black" value="female">female</option>
                                     <option className="text-black" value="male">male</option>
@@ -100,11 +127,10 @@ const SignUp = () => {
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">SignUp</button>
                             </div>
-                            <div>
+                            <div className="text-white">
                                 <h3>Already Have An Account? Please <Link to="/login"><span className="font-bold">Login</span></Link> </h3>
-
-
                             </div>
+                            <button onClick={handleLogInWithGoogle} className=' btn btn-success mb-5'>login with google</button>
                         </form>
                     </div>
                 </div>
