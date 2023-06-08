@@ -10,7 +10,7 @@ const Banner = () => {
                             <h2 className='text-5xl md:text-6xl text-white font-bold'>Dancing is Like dreaming With your foot!</h2>
                             <p>Learn From The Best Dance professionals</p>
                             <div>
-                                <button className="btn btn-active btn-primary mr-5">Read More</button>
+                                <button className="btn btn-outline border-0 border-y-2 btn-error  mt-3">Read More</button>
                             </div>
                         </div>
 
@@ -27,7 +27,7 @@ const Banner = () => {
                             <h2 className='text-5xl md:text-6xl text-white font-bold'>Dancing is Like dreaming With your foot!</h2>
                             <p>Learn From The Best Dance professionals</p>
                             <div>
-                                <button className="btn btn-active btn-primary mr-5">Read More</button>
+                                <button className="btn btn-outline border-0 border-y-2 btn-error  mt-3">Read More</button>
                             </div>
                         </div>
 
@@ -44,7 +44,7 @@ const Banner = () => {
                             <h2 className='text-5xl md:text-6xl text-white font-bold'>Dancing is Like dreaming With your foot!</h2>
                             <p>Learn From The Best Dance professionals</p>
                             <div>
-                                <button className="btn btn-active btn-primary mr-5">Read More</button>
+                                <button className="btn btn-outline border-0 border-y-2 btn-error  mt-3">Read More</button>
                             </div>
                         </div>
                     </div>

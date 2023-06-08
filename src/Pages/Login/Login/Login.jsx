@@ -55,20 +55,21 @@ const Login = () => {
             <Helmet>
                 <title>Dance | Login</title>
             </Helmet>
-            <div className="hero min-h-screen bg-base-200" style={{ backgroundImage: "url(https://i.ibb.co/6rhTRBM/7b711ed65d3300f657827e091383d36d.png)" }}>
+            <div className="hero min-h-screen bg-base-200" style={{ backgroundImage: "url(https://i.ibb.co/ZcFBjYt/photo-1640017955477-75b58521007d-ixlib-rb-4-0.jpg)" }}>
+
                 <div className="hero-content flex-col lg:flex-row">
 
                     <div className="card flex-shrink-0 w-full max-w-md shadow-2xl ">
                         <form onSubmit={handleSubmit(onSubmit)} className="card-body ">
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text text-white">Email</span>
+                                    <span className="label-text ">Email</span>
                                 </label>
                                 <input type="text" {...register("email")} placeholder="email" className="input input-bordered" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text text-white">Password</span>
+                                    <span className="label-text ">Password</span>
                                 </label>
                                 <input type="text"  {...register("password", { required: true })} placeholder="password" className="input input-bordered" />
                                 {errors.password && <span>PAssword should be six characters</span>}
@@ -76,13 +77,13 @@ const Login = () => {
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Login</button>
                             </div>
-                            <div className="text-white">
+                            <div className="">
                                 <h3>New Here?Please <Link to="/signup"><span className="font-bold">SignUp</span></Link> </h3>
 
                             </div>
-                            <button onClick={handleLogInWithGoogle} className=' btn btn-success mb-5'>login with google</button>
+                            <button onClick={handleLogInWithGoogle} className=' btn btn-outline border-0 border-y-2 btn-secondary mt-3'>login with google</button>
 
-                            <Link to="/" className="btn btn-secondary btn-sm form-control mt-6">Go To Home</Link>
+                            <Link to="/" className="btn btn-outline btn-sm border-0 border-y-2 btn-secondary mt-3">Go To Home</Link>
                         </form>
                     </div>
                 </div>

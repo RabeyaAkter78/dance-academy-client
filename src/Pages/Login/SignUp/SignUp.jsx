@@ -51,47 +51,48 @@ const SignUp = () => {
             <Helmet>
                 <title>Dance | SignUp</title>
             </Helmet>
-            <div className="hero min-h-screen bg-base-200" style={{ backgroundImage: "url(https://wallpaperaccess.com/full/2523652.jpg)" }}>
+            <div className="hero min-h-screen " style={{ backgroundImage: "url(https://i.ibb.co/ZcFBjYt/photo-1640017955477-75b58521007d-ixlib-rb-4-0.jpg)" }}>
+           
                 <div className="hero-content flex-col lg:flex-row">
 
                     <div className="card flex-shrink-0 w-full max-w-md shadow-2xl ">
                         <form onSubmit={handleSubmit(onSubmit)} className="card-body ">
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text text-white">Name</span>
+                                    <span className="label-text ">Name</span>
                                 </label>
                                 <input type="text" {...register("name", { required: true })} placeholder="Name" className="input input-bordered" />
                                 {errors.name && <span className="text-red-600">Name is required</span>}
                             </div>
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text text-white">Email</span>
+                                    <span className="label-text ">Email</span>
                                 </label>
                                 <input type="email" {...register("email", { required: true })} placeholder="email" className="input input-bordered" />
                                 {errors.email && <span className="text-red-600">Email is required</span>}
                             </div>
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text text-white">Photo Url</span>
+                                    <span className="label-text ">Photo Url</span>
                                 </label>
                                 <input type="text" {...register("photoUrl", { required: true })} placeholder="Photo Url" className="input input-bordered" />
                                 {errors.photoUrl && <span className="text-red-600">Photo URl is required</span>}
                             </div>
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text text-white">Contact number</span>
+                                    <span className="label-text ">Contact number</span>
                                 </label>
                                 <input type="text" {...register("contactNumber")} placeholder="Contact number" className="input input-bordered text-black" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text text-white">Address</span>
+                                    <span className="label-text ">Address</span>
                                 </label>
                                 <input type="text" {...register("address")} placeholder="Address" className="input input-bordered text-black" />
                             </div>
                             <div className="form-control text-black">
                                 <label className="label">
-                                    <span className="label-text text-white">Gender</span>
+                                    <span className="label-text ">Gender</span>
                                 </label>
 
                                 <select className="input input-bordered " placeholder="Gender" {...register("gender")}>
@@ -102,7 +103,7 @@ const SignUp = () => {
                             </div>
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text text-white">Password</span>
+                                    <span className="label-text ">Password</span>
                                 </label>
                                 <input type="password" {...register("password", {
                                     required: true,
@@ -119,7 +120,7 @@ const SignUp = () => {
                             </div>
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text text-white">Confirm Password</span>
+                                    <span className="label-text ">Confirm Password</span>
                                 </label>
                                 <input type="password"  {...register("confirmPassword", { required: true })} placeholder="Confirm password" className="input input-bordered text-black" />
                                 {errors.photoUrl && <span className="text-red-600">password is required</span>}
@@ -127,10 +128,10 @@ const SignUp = () => {
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">SignUp</button>
                             </div>
-                            <div className="text-white">
+                            <div className="">
                                 <h3>Already Have An Account? Please <Link to="/login"><span className="font-bold">Login</span></Link> </h3>
                             </div>
-                            <button onClick={handleLogInWithGoogle} className=' btn btn-success mb-5'>login with google</button>
+                            <button onClick={handleLogInWithGoogle} className='btn btn-outline border-0 border-y-2 btn-secondary mt-3'>login with google</button>
                         </form>
                     </div>
                 </div>
