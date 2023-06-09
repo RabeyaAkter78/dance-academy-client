@@ -81,9 +81,9 @@ const Login = () => {
                                 <h3>New Here?Please <Link to="/signup"><span className="font-bold">SignUp</span></Link> </h3>
 
                             </div>
-                            <button onClick={handleLogInWithGoogle} className=' btn btn-outline border-0 border-y-2 btn-secondary mt-3'>login with google</button>
+                            <button onClick={handleLogInWithGoogle} className=' btn btn-outline border-0 border-y-2 btn-error mt-3'>login with google</button>
 
-                            <Link to="/" className="btn btn-outline btn-sm border-0 border-y-2 btn-secondary mt-3">Go To Home</Link>
+                            <Link to="/" className="btn btn-outline btn-sm border-0 border-y-2 btn-error mt-3">Go To Home</Link>
                         </form>
                     </div>
                 </div>

@@ -1,6 +1,6 @@
 [
     {
-      "course_id": 1,
+     
       "course_name": "Salsa Dancing",
       "course_price": "$99",
       "course_image": "https://i.ibb.co/vJF6fLZ/images-q-tbn-ANd9-Gc-Qdx-Vh-IZO1fwpd-WBEM-b-Qeiig1-WF8pc-Bt-AJLXu-YNd6z-V32-B8ug-Lor-21o-Gm-Aei-WYUt.jpg",
@@ -9,7 +9,7 @@
     },
    
     {
-      "course_id": 2,
+      
       "course_name": "Ballet Classes",
       "course_price": "$109",
       "course_image": "https://i.ibb.co/mNQ9Hjr/light-young-graceful-ballet-dancer-isolated-gradient-pink-green-wall-neon-art-motion-action-flexibil.jpg",
@@ -17,7 +17,7 @@
       "student_number": 20
     },
     {
-        "course_id": 3,
+       
         "course_name": "Hip Hop Dance",
         "course_price": "$89",
         "course_image": "https://i.ibb.co/NKgSfmM/HG0hy7.jpg",
@@ -25,7 +25,7 @@
         "student_number": 35
       },
     {
-      "course_id": 4,
+      
       "course_name": "Contemporary Dance",
       "course_price": "$79",
       "course_image": "https://i.ibb.co/gmJfpVG/slender-teen-ballet-boy-jumps-barefoot-colored-light-298446-680.jpg",
@@ -33,7 +33,7 @@
       "student_number": 40
     },
     {
-      "course_id": 5,
+     
       "course_name": "Tap Dance Lessons",
       "course_price": "$94",
       "course_image": "https://i.ibb.co/g7kCKBj/Class-Styles-Descriptions-Media-Site5-1024x576.png",
@@ -41,7 +41,7 @@
       "student_number": 25
     },
     {
-      "course_id": 6,
+      
       "course_name": "Ballroom Dancing",
       "course_price": "$119",
       "course_image": "https://i.ibb.co/y0x9c9n/181670652-full-length-portrait-of-young-beautiful-man-and-woman-dancing-ballroom-dance-isolated-over.webp",

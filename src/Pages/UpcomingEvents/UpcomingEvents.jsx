@@ -7,7 +7,7 @@ const UpcomingEvents = () => {
 
 
     useEffect(() => {
-        fetch('events.json')
+        fetch('http://localhost:5000/event')
             .then(res => res.json())
             .then(data => {
 

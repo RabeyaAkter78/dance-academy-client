@@ -131,7 +131,7 @@ const SignUp = () => {
                             <div className="">
                                 <h3>Already Have An Account? Please <Link to="/login"><span className="font-bold">Login</span></Link> </h3>
                             </div>
-                            <button onClick={handleLogInWithGoogle} className='btn btn-outline border-0 border-y-2 btn-secondary mt-3'>login with google</button>
+                            <button onClick={handleLogInWithGoogle} className='btn btn-outline border-0 border-y-2 btn-error mt-3'>login with google</button>
                         </form>
                     </div>
                 </div>
