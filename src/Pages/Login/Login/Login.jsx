@@ -5,6 +5,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import app from "../../../firebase.config";
+import Swal from "sweetalert2";
 
 
 const auth = getAuth(app)
@@ -28,6 +29,14 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                Swal.fire({
+                    position: 'top',
+                    icon: 'success',
+                    title: 'Login Successfully!',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+
                 navigate(from, { replace: true });
 
             })
@@ -40,7 +49,13 @@ const Login = () => {
 
         signInWithPopup(auth, provider)
             .then(() => {
-
+                Swal.fire({
+                    position: 'top',
+                    icon: 'success',
+                    title: 'Login Successfully!',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
                 navigate(from, { replace: true });
 
             })

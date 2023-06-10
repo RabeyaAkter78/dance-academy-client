@@ -6,14 +6,15 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Providers/AuthProvider";
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import app from "../../../firebase.config";
+import Swal from "sweetalert2";
 
 
 
 const auth = getAuth(app);
 
 const SignUp = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
-    const { createUser } = useContext(AuthContext);
+    const { register, handleSubmit,reset, formState: { errors } } = useForm();
+    const { createUser,updateUserData ,logOut} = useContext(AuthContext);
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -26,6 +27,26 @@ const SignUp = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
+
+
+                updateUserData(data.name,data.photoUrl)
+                .then(()=>{
+                    console.log('user profile data updated');
+                    reset();
+                    Swal.fire({
+                        position: 'top',
+                        icon: 'success',
+                        title: 'User Created Successfully!',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                    logOut();
+                    navigate('/login');
+                })
+              
+                .catch(error=>{
+                    console.log(error);
+                })
             })
 
     };
@@ -36,7 +57,13 @@ const SignUp = () => {
 
         signInWithPopup(auth, provider)
             .then(() => {
-
+                Swal.fire({
+                    position: 'top',
+                    icon: 'success',
+                    title: 'Login Successfully!',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
                 navigate(from, { replace: true });
 
             })
