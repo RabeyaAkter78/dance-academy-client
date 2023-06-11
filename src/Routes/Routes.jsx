@@ -1,6 +1,6 @@
 import {
-    createBrowserRouter,
-  } from "react-router-dom";
+  createBrowserRouter,
+} from "react-router-dom";
 import Main from "../LayOuts/Main";
 import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/Login/Login/Login";
@@ -16,72 +16,77 @@ import ManageClasses from "../Pages/DashBoard/Admin/ManageClasses/ManageClasses"
 import ManageUsers from "../Pages/DashBoard/Admin/ManageUsers/ManageUsers";
 import AddClass from "../Pages/DashBoard/Instructor/AddClass/AddClass";
 import MyClass from "../Pages/DashBoard/Instructor/MyClass/MyClass";
+import Instructors from "../Pages/Instructors/Instructors";
 
 
- export const router = createBrowserRouter([
-    {
-      path: "/",
-      element:<Main></Main>,
-      children:[
-        {
-            path:'/',
-            element:<Home></Home>
-        },
-        {
-            path:'login',
-            element:<Login></Login>
-        },
-        {
-            path:'signUp',
-            element:<SignUp></SignUp>
-        },
-        {
-          path:'classes',
-          element:<PrivateRoute><Classes></Classes></PrivateRoute>
-        }
-      ]
-    },
-    {
-      path:'dashBoard',
-      element:<DashBoard></DashBoard>,
-      children:[
-        {
-          path:'selectedClass',
-          element:<SelectedClass></SelectedClass>
-        },
-        {
-          path:'enrolledClass',
-          element:<EnrolledClass></EnrolledClass>
-        },
-        {
-          path:'payment',
-          element:<Payment></Payment>
-        },
-        {
-          path:'paymentHistory',
-          element:<PaymentHistory></PaymentHistory>
-        },
-        // Admin:
+export const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Main></Main>,
+    children: [
+      {
+        path: '/',
+        element: <Home></Home>
+      },
+      {
+        path: 'login',
+        element: <Login></Login>
+      },
+      {
+        path: 'signUp',
+        element: <SignUp></SignUp>
+      },
+      {
+        path: 'classes',
+        element: <PrivateRoute><Classes></Classes></PrivateRoute>
+      },
+      {
+        path: 'instructors',
+        element: <PrivateRoute><Instructors></Instructors></PrivateRoute>
+      }
+    ]
+  },
+  {
+    path: 'dashBoard',
+    element: <PrivateRoute><DashBoard></DashBoard></PrivateRoute>,
+    children: [
+      {
+        path: 'selectedClass',
+        element: <SelectedClass></SelectedClass>
+      },
+      {
+        path: 'enrolledClass',
+        element: <EnrolledClass></EnrolledClass>
+      },
+      {
+        path: 'payment',
+        element: <Payment></Payment>
+      },
+      {
+        path: 'paymentHistory',
+        element: <PaymentHistory></PaymentHistory>
+      },
+      // Admin:
 
-        {
-          path:'manageClasses',
-          element:<ManageClasses></ManageClasses>
-        },
-        {
-          path:'manageUsers',
-          element:<ManageUsers></ManageUsers>
-        },
-        // Instructor:
+      {
+        path: 'manageClasses',
+        element: <ManageClasses></ManageClasses>
+      },
+      {
+        path: 'manageUsers',
+        element: <ManageUsers></ManageUsers>
+      },
+      // Instructor:
 
-        {
-          path:'addClass',
-          element:<AddClass></AddClass>
-        },
-        {
-          path:'myClass',
-          element:<MyClass></MyClass>
-        },
+      {
+        path: 'addClass',
+        element: <AddClass></AddClass>
+      },
+      {
+        path: 'myClass',
+        element: <MyClass></MyClass>
+      },
 
-      ]
-    }
-  ]);
+    ]
+  }
+]);

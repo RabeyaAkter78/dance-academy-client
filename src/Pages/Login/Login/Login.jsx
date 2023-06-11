@@ -3,12 +3,13 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
-import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
-import app from "../../../firebase.config";
+// import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+// import app from "../../../firebase.config";
 import Swal from "sweetalert2";
+import SocialLogin from "../../Shared/SocialLogin/SocialLogin";
 
 
-const auth = getAuth(app)
+// const auth = getAuth(app)
 const Login = () => {
     const { signIn } = useContext(AuthContext);
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -42,27 +43,6 @@ const Login = () => {
             })
     }
 
-    // login with google:
-    const provider = new GoogleAuthProvider();
-
-    const handleLogInWithGoogle = () => {
-
-        signInWithPopup(auth, provider)
-            .then(() => {
-                Swal.fire({
-                    position: 'top',
-                    icon: 'success',
-                    title: 'Login Successfully!',
-                    showConfirmButton: false,
-                    timer: 1500
-                })
-                navigate(from, { replace: true });
-
-            })
-            .catch(error => {
-                console.log(error.message);
-            })
-    }
 
     return (
 
@@ -90,15 +70,15 @@ const Login = () => {
                                 {errors.password && <span>PAssword should be six characters</span>}
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary">Login</button>
+                                <button className="btn btn-outline border-0 border-y-2 btn-error  mt-3">Login</button>
                             </div>
                             <div className="">
                                 <h3>New Here?Please <Link to="/signup"><span className="font-bold">SignUp</span></Link> </h3>
 
                             </div>
-                            <button onClick={handleLogInWithGoogle} className=' btn btn-outline border-0 border-y-2 btn-error mt-3'>login with google</button>
+                            <SocialLogin></SocialLogin>
 
-                            <Link to="/" className="btn btn-outline btn-sm border-0 border-y-2 btn-error mt-3">Go To Home</Link>
+                            {/* <Link to="/" className="btn btn-outline btn-sm border-0 border-y-2 btn-error mt-3">Go To Home</Link> */}
                         </form>
                     </div>
                 </div>

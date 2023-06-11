@@ -2,23 +2,22 @@
 import { useContext } from "react";
 import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Providers/AuthProvider";
-import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
-import app from "../../../firebase.config";
+
 import Swal from "sweetalert2";
+import SocialLogin from "../../Shared/SocialLogin/SocialLogin";
 
 
 
-const auth = getAuth(app);
+// const auth = getAuth(app);
 
 const SignUp = () => {
-    const { register, handleSubmit,reset, formState: { errors } } = useForm();
-    const { createUser,updateUserData ,logOut} = useContext(AuthContext);
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const { createUser, updateUserData, logOut } = useContext(AuthContext);
 
     const navigate = useNavigate();
-    const location = useLocation();
-    const from = location.state?.from?.pathname || '/';
+
 
     const onSubmit = data => {
         console.log(data)
@@ -29,49 +28,44 @@ const SignUp = () => {
                 console.log(loggedUser);
 
 
-                updateUserData(data.name,data.photoUrl)
-                .then(()=>{
-                    console.log('user profile data updated');
-                    reset();
-                    Swal.fire({
-                        position: 'top',
-                        icon: 'success',
-                        title: 'User Created Successfully!',
-                        showConfirmButton: false,
-                        timer: 1500
+                updateUserData(data.name, data.photoUrl)
+
+                    .then(() => {
+                        const savedUser = { name: data.name, email: data.email }
+
+                        fetch('http://localhost:5000/users', {
+                            method: 'POST',
+                            headers: {
+                                'content-type': 'application/json'
+                            },
+                            body: JSON.stringify(savedUser)
+                        })
+                            .then(res => res.json())
+                            .then(data => {
+                                if (data.insertedId) {
+                                    reset();
+                                    Swal.fire({
+                                        position: 'top',
+                                        icon: 'success',
+                                        title: 'User Created Successfully!',
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    })
+                                    logOut();
+                                    navigate('/login');
+                                }
+                            })
+
+
+
                     })
-                    logOut();
-                    navigate('/login');
-                })
-              
-                .catch(error=>{
-                    console.log(error);
-                })
+
+                    .catch(error => {
+                        console.log(error);
+                    })
             })
 
     };
-    // login with google:
-    const provider = new GoogleAuthProvider();
-
-    const handleLogInWithGoogle = () => {
-
-        signInWithPopup(auth, provider)
-            .then(() => {
-                Swal.fire({
-                    position: 'top',
-                    icon: 'success',
-                    title: 'Login Successfully!',
-                    showConfirmButton: false,
-                    timer: 1500
-                })
-                navigate(from, { replace: true });
-
-            })
-            .catch(error => {
-                console.log(error.message);
-            })
-    }
-
 
     return (
         <div>
@@ -79,7 +73,7 @@ const SignUp = () => {
                 <title>Dance | SignUp</title>
             </Helmet>
             <div className="hero min-h-screen " style={{ backgroundImage: "url(https://i.ibb.co/ZcFBjYt/photo-1640017955477-75b58521007d-ixlib-rb-4-0.jpg)" }}>
-           
+
                 <div className="hero-content flex-col lg:flex-row">
 
                     <div className="card flex-shrink-0 w-full max-w-md shadow-2xl ">
@@ -153,12 +147,12 @@ const SignUp = () => {
                                 {errors.photoUrl && <span className="text-red-600">password is required</span>}
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary">SignUp</button>
+                                <button className="btn btn-outline border-0 border-y-2 btn-error  mt-3">SignUp</button>
                             </div>
                             <div className="">
                                 <h3>Already Have An Account? Please <Link to="/login"><span className="font-bold">Login</span></Link> </h3>
                             </div>
-                            <button onClick={handleLogInWithGoogle} className='btn btn-outline border-0 border-y-2 btn-error mt-3'>login with google</button>
+                            <SocialLogin></SocialLogin>
                         </form>
                     </div>
                 </div>

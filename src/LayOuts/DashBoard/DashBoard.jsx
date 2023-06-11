@@ -1,14 +1,20 @@
-import {  FaHamburger, FaHome, FaRegBookmark,  FaBook, FaUsers, FaShoppingCart, FaCalendar } from "react-icons/fa";
+import { FaHome, FaBook, FaUsers, FaShoppingCart, FaCalendar, FaBookOpen, FaChalkboardTeacher } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
+import UseClasses from "../../Hooks/UseClasses";
+import UseAdmin from "../../Hooks/UseAdmin";
+import UseInstructor from "../../Hooks/UseInstructor";
 
 
 const DashBoard = () => {
+  const [classes] = UseClasses();
+  console.log(classes);
 
   // TODO: load data from the server to have dynamic isAdmin based on data:
-  const isAdmin = false;
-  const isInstructor = true;
-  // const isStudent=true;
-  // const [isAdmin] = UseAdmin();
+  // const isAdmin = false;
+  // const isInstructor = false;
+  // // const isStudent=true;
+  const [isAdmin] = UseAdmin();
+  const [isInstructor] = UseInstructor();
 
   return (
     <div className="drawer drawer-mobile lg:drawer-open " >
@@ -39,7 +45,7 @@ const DashBoard = () => {
 
                   <li><NavLink to='/dashBoard/myClass'><FaCalendar></FaCalendar>My Class</NavLink></li>
 
-                 
+
                 </>
                 :
                 // student:
@@ -49,7 +55,7 @@ const DashBoard = () => {
 
                   </NavLink></li>
                   <li><NavLink to='/dashBoard/enrolledClass'><FaShoppingCart></FaShoppingCart> My Enrolled Class
-                    <span className="badge inl badge-secondary">+0</span>
+                    <span className="badge inl badge-secondary">{classes?.length || 0}</span>
 
                   </NavLink></li>
 
@@ -66,8 +72,8 @@ const DashBoard = () => {
           {/* Sidebar content here */}
           <div className="divider"></div>
           <li><NavLink to="/"><FaHome></FaHome> Home</NavLink></li>
-          <li><NavLink to="/menu"><FaHamburger></FaHamburger> OUR MENU</NavLink></li>
-          <li><NavLink to="/order/pizza"><FaRegBookmark></FaRegBookmark> ORDER FOOD</NavLink></li>
+          <li><NavLink to="/classes"><FaBookOpen></FaBookOpen> Classes</NavLink></li>
+          <li><NavLink to="/instructors"><FaChalkboardTeacher></FaChalkboardTeacher>  Instructors</NavLink></li>
 
 
 

@@ -28,7 +28,7 @@ const Instructors = () => {
             ></SectionTitle>
 
 
-            <div className="flex min-h-screen items-center justify-center bg-pink-50 my-14">
+            <div className="flex min-h-screen items-center justify-center bg-pink-50 ">
                 <div className="grid grid-cols-1 md:grid-cols-3 py-5 gap-12">
                     {
                         instructors.map(instructor => <div key={instructor._id}
