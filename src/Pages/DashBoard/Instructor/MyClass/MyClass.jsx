@@ -37,20 +37,25 @@ const MyClass = () => {
                             <th>Availabe Seat</th>
                             <th>Prcice</th>
                             <th>Status</th>
+                            <th>See FeedBack</th>
                         </tr>
                     </thead>
                     <tbody >
                         {classes.map((course, index) => <tr key={course._id}>
                             <th>{index + 1}</th>
                             <td >
-                                <img className="w-[80px]" style={{ borderRadius: '0 200px 200px 0' }} src={course.course_Image} alt="" />
+                                <img className="w-12 h-12 mask mask-squircle" style={{ borderRadius: '0 200px 200px 0' }} src={course.course_Image} alt="" />
                             </td>
                             <td>{course.course_name}</td>
                             <td>{course.available_seats}</td>
                             <td> $ {course.price}</td>
-                            <td>pending</td>
-                            <td className="flex gap-4">
-
+                            <td className="flex flex-col justify-center items-center">
+                                <button className="btn btn-neutral border-0 border-b-2 btn-outline btn-xs mb-4">Pending</button>
+                                <button className="btn btn-success border-0 border-b-2 btn-outline btn-xs mb-4">Accept</button>
+                                <button className="btn btn-error border-0 border-b-2 btn-outline btn-xs">Denied</button>
+                            </td>
+                            <td >
+                                <button className="btn btn-info border-0 border-b-2 btn-outline btn-xs">FeedBack</button>
                             </td>
 
                         </tr>

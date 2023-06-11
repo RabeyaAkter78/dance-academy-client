@@ -13,14 +13,6 @@ const Classes = () => {
                 console.log(data);
                 setCourses(data);
             })
-
-        // fetch('http://localhost:5000/course')
-        //     .then(res => res.json())
-        //     .then(data => {
-
-        //         setCourses(data);
-        //         console.log(data);
-        //     })
     }, [])
 
     const handleSelect = (courses) => {
@@ -42,15 +34,16 @@ const Classes = () => {
                         >
                             <div className="card w-96 bg-base-100 shadow-xl">
                                 <figure className="px-10 pt-10">
-                                    <img src={course.course_Image} alt="Shoes" className="rounded-xl h-80" />
+                                    <img src={course.course_Image} alt="Shoes" className="rounded-xl h-80 " />
                                 </figure>
                                 <div className="card-body items-center text-center">
                                     <h2 className="card-title">Curse: {course.course_name} Dance</h2>
                                     <h2 className="card-title">Instructor: {course.instructor_Name}</h2>
+                                    <p> Total seat: {course.total_seats}</p>
                                     <p> Available seat: {course.available_seats}</p>
                                     <p> Price: ${course.price}</p>
                                     <div className="card-actions">
-                                        <button onClick={()=>handleSelect(courses)} className="btn btn-sm btn-error btn-outline border-0 border-y-2 mt-2">Select</button>
+                                        <button onClick={() => handleSelect(courses)} className="btn btn-sm btn-error btn-outline border-0 border-y-2 mt-2">Select</button>
                                     </div>
                                 </div>
                             </div>

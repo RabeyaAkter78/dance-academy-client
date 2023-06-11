@@ -14,11 +14,12 @@ const AddClass = () => {
         const course_Image = form.course_Image.value;
         const instructor_Name = form.instructor_Name.value;
         const email = form.email.value;
+        const total_seats = form.total_seats.value;
         const available_seats = form.available_seats.value;
         const price = form.price.value;
 
 
-        const addClass = { course_name, email, course_Image,price,instructor_Name,  available_seats, };
+        const addClass = { course_name, email, course_Image,price,instructor_Name, total_seats, available_seats, };
         console.log(addClass);
         fetch("http://localhost:5000/addAClass", {
             method: "POST",
@@ -94,6 +95,13 @@ const AddClass = () => {
                                 placeholder="Instructor Email" className="input input-bordered" required readOnly />
                         </div>
 
+                        <div className="form-control ">
+                            <label className="label">
+                                <span className="label-text">Total Seat</span>
+                            </label>
+
+                            <input type="text" name='total_seats' placeholder=" Total Seat" className="input input-bordered" />
+                        </div>
                         <div className="form-control ">
                             <label className="label">
                                 <span className="label-text">available_seats</span>

@@ -1,12 +1,12 @@
 import { useEffect } from "react";
-import { useContext } from "react";
+// import { useContext } from "react";
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
-import { AuthContext } from "../../../../Providers/AuthProvider";
+// import { AuthContext } from "../../../../Providers/AuthProvider";
 
 const ManageClasses = () => {
     const [courses, setCourses] = useState([])
-    const { user } = useContext(AuthContext);
+    // const { user } = useContext(AuthContext);
 
     useEffect(() => {
         fetch('http://localhost:5000/course')
