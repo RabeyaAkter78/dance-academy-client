@@ -17,6 +17,7 @@ import ManageUsers from "../Pages/DashBoard/Admin/ManageUsers/ManageUsers";
 import AddClass from "../Pages/DashBoard/Instructor/AddClass/AddClass";
 import MyClass from "../Pages/DashBoard/Instructor/MyClass/MyClass";
 import Instructors from "../Pages/Instructors/Instructors";
+import Error from "../Pages/Error/Error";
 
 
 export const router = createBrowserRouter([
@@ -88,5 +89,9 @@ export const router = createBrowserRouter([
       },
 
     ]
+  },
+  {
+    path: "*",
+    element: <Error></Error>
   }
 ]);

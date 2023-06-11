@@ -3,11 +3,14 @@ import { NavLink, Outlet } from "react-router-dom";
 import UseClasses from "../../Hooks/UseClasses";
 import UseAdmin from "../../Hooks/UseAdmin";
 import UseInstructor from "../../Hooks/UseInstructor";
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 
 const DashBoard = () => {
+  const { user } = useContext(AuthContext);
   const [classes] = UseClasses();
-  console.log(classes);
+  // console.log(classes,);
 
   // TODO: load data from the server to have dynamic isAdmin based on data:
   // const isAdmin = false;
@@ -15,6 +18,7 @@ const DashBoard = () => {
   // // const isStudent=true;
   const [isAdmin] = UseAdmin();
   const [isInstructor] = UseInstructor();
+  console.log(isInstructor,user);
 
   return (
     <div className="drawer drawer-mobile lg:drawer-open " >

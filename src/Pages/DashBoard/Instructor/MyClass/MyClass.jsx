@@ -26,9 +26,44 @@ const MyClass = () => {
                 subHeading={`Instructor Email:${user?.email}`}
             ></SectionTitle>
 
-            <div className="text-black/70 bg-purple-50 p-14 my-10">
+            <div className="overflow-x-auto w-full">
+                <table className="table table-zebra w-full ">
+                    {/* head */}
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Class Image</th>
+                            <th>Class Name</th>
+                            <th>Availabe Seat</th>
+                            <th>Prcice</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody >
+                        {classes.map((course, index) => <tr key={course._id}>
+                            <th>{index + 1}</th>
+                            <td >
+                                <img className="w-[80px]" style={{ borderRadius: '0 200px 200px 0' }} src={course.course_Image} alt="" />
+                            </td>
+                            <td>{course.course_name}</td>
+                            <td>{course.available_seats}</td>
+                            <td> $ {course.price}</td>
+                            <td>pending</td>
+                            <td className="flex gap-4">
+
+                            </td>
+
+                        </tr>
+
+                        )}
+
+
+                    </tbody>
+                </table>
+            </div>
+            {/* <div className="text-black/70 bg-purple-50 p-14 my-10">
                 {
-                    classes.map(event => <div key={event._id}
+                    course.map(event => <div key={event._id}
                     >
                         <div className=" grid md:grid-cols-2 bg-red-100 mb-10 group relative  items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black rounded">
                             <div className=" h-[500px] w-[500px]">
@@ -49,7 +84,7 @@ const MyClass = () => {
                     </div>)
                 }
 
-            </div>
+            </div> */}
         </div>
     );
 };

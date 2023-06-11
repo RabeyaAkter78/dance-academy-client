@@ -10,15 +10,15 @@ const AddClass = () => {
     const handleAddToys = (event) => {
         event.preventDefault();
         const form = event.target;
-        const className = form.className.value;
-        const classImage = form.classImage.value;
-        const instructorName = form.instructorName.value;
+        const course_name = form.course_name.value;
+        const course_Image = form.course_Image.value;
+        const instructor_Name = form.instructor_Name.value;
         const email = form.email.value;
-        const availabeSeat = form.availabeSeat.value;
+        const available_seats = form.available_seats.value;
         const price = form.price.value;
 
 
-        const addClass = { className, email, classImage,price,instructorName,  availabeSeat, };
+        const addClass = { course_name, email, course_Image,price,instructor_Name,  available_seats, };
         console.log(addClass);
         fetch("http://localhost:5000/addAClass", {
             method: "POST",
@@ -112,7 +112,7 @@ const AddClass = () => {
 
                     </div>
                     <div className="form-control mt-6">
-                        <button onClick={handleToast} className="btn btn-outline border-0 border-y-2 btn-error  mt-3">Add</button>
+                        <button onClick={handleToast} className="btn btn-error border-0 border-y-2">Add</button>
 
                     </div>
                 </div>
