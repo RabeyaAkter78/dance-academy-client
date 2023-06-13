@@ -9,7 +9,7 @@ const MyClass = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myClass?email=${user?.email}`)
+        fetch(`https://dance-academy-server-rabeyaakter78.vercel.app/myClass?email=${user?.email}`)
             .then(res => res.json())
             .then(data => {
 

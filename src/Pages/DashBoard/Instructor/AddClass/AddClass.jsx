@@ -48,7 +48,7 @@ const AddClass = () => {
         //     })
 
 
-        fetch("http://localhost:5000/addAClass", {
+        fetch("https://dance-academy-server-rabeyaakter78.vercel.app/addAClass", {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -194,7 +194,7 @@ export default AddClass;
 
     //     // console.log(addClass);
 
-    //     // fetch("http://localhost:5000/addAClass", {
+    //     // fetch("https://dance-academy-server-rabeyaakter78.vercel.app/addAClass", {
     //     //     method: "POST",
     //     //     headers: {
     //     //         'content-type': 'application/json'

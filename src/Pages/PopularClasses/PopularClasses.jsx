@@ -8,7 +8,7 @@ const PopularclassNamees = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/class')
+        fetch('https://dance-academy-server-rabeyaakter78.vercel.app/class')
             .then(res => res.json())
             .then(data => {
 

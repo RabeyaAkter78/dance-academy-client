@@ -7,7 +7,7 @@ const Classes = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/course')
+        fetch('https://dance-academy-server-rabeyaakter78.vercel.app/course')
             .then(res => res.json())
             .then(data => {
                 console.log(data);

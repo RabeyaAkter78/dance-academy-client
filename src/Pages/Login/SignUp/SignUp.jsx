@@ -33,7 +33,7 @@ const SignUp = () => {
                     .then(() => {
                         const savedUser = { name: data.name, email: data.email }
 
-                        fetch('http://localhost:5000/users', {
+                        fetch('https://dance-academy-server-rabeyaakter78.vercel.app/users', {
                             method: 'POST',
                             headers: {
                                 'content-type': 'application/json'
