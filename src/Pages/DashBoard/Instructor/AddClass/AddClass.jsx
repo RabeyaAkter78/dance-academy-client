@@ -6,46 +6,46 @@ import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
 
 
-const img_hosting_token = import.meta.env.VITE_image_hosting_token
+// const img_hosting_token = import.meta.env.VITE_image_hosting_token
 // console.log(img_hosting_token);
 
 const AddClass = () => {
     const { user } = useContext(AuthContext);
     const { register, reset, handleSubmit, formState: { errors } } = useForm();
 
-    const img_hosting_url = `https://api.imgbb.com/1/upload?key=${img_hosting_token}`
+    // const img_hosting_url = `https://api.imgbb.com/1/upload?key=${img_hosting_token}`
     // console.log(img_hosting_url);
 
 
 
     const onSubmit = data => {
         console.log(data);
-        const formData = new FormData();
-        formData.append('image', data.course_Image[0])
+        // const formData = new FormData();
+        // formData.append('image', data.course_Image[0])
 
-        fetch(img_hosting_url, {
-            method: 'POST',
-            body: formData
-        })
-            .then(res => res.json())
-            .then(imgResponse => {
-                if (imgResponse.success) {
-                    const imgURL = imgResponse.data.display_url;
-                    console.log(imgURL);
+        // fetch(img_hosting_url, {
+        //     method: 'POST',
+        //     body: formData
+        // })
+        //     .then(res => res.json())
+        //     .then(imgResponse => {
+        //         if (imgResponse.success) {
+        //             const imgURL = imgResponse.data.display_url;
+        //             console.log(imgURL);
 
-                    // const { course_name, email, course_Image, price, instructor_Name, total_seats, available_seats } = data;
+        //             // const { course_name, email, course_Image, price, instructor_Name, total_seats, available_seats } = data;
 
-                    const newClass = data;
-                    newClass.course_Image = imgURL;
+        //             const newClass = data;
+        //             newClass.course_Image = imgURL;
 
-                    // const newData = { course_name, email, instructor_Name, course_Image: imgURL, total_seats: parseInt(total_seats), available_seats: parseInt(available_seats), price: parseInt(price) }
+        //             // const newData = { course_name, email, instructor_Name, course_Image: imgURL, total_seats: parseInt(total_seats), available_seats: parseInt(available_seats), price: parseInt(price) }
 
-                    console.log(newClass);
-                }
+        //             console.log(newClass);
+        //         }
 
 
-                console.log(imgResponse);
-            })
+        //         console.log(imgResponse);
+        //     })
 
 
         fetch("http://localhost:5000/addAClass", {
@@ -106,7 +106,8 @@ const AddClass = () => {
                             <label className="label">
                                 <span className="label-text">Class Image</span>
                             </label>
-                            <input {...register("course_Image")} type="file" className="file-input file-input-bordered w-full max-w-xs" />
+                            <input {...register("course_Image")} placeholder="course_Image" className="input input-bordered" required />
+                            {/* <input {...register("course_Image")} type="file" className="file-input file-input-bordered w-full max-w-xs" /> */}
 
                         </div>
 

@@ -1,0 +1,173 @@
+[
+    {
+      "course_name": "Salsa Dancing",
+      "course_price": 99,
+      "course_image": "https://i.ibb.co/vJF6fLZ/images-q-tbn-ANd9-Gc-Qdx-Vh-IZO1fwpd-WBEM-b-Qeiig1-WF8pc-Bt-AJLXu-YNd6z-V32-B8ug-Lor-21o-Gm-Aei-WYUt.jpg",
+      "course_details": "Learn the energetic and rhythmic moves of Salsa dance with our expert instructors.",
+      "instructor_name": "John Smith",
+      "instructor_email": "johnsmith@example.com",
+      "student_number": 20,
+      "seat_number": 50
+    },
+    {
+      "course_name": "Ballet Classes",
+      "course_price": 90,
+      "course_image": "https://i.ibb.co/mNQ9Hjr/light-young-graceful-ballet-dancer-isolated-gradient-pink-green-wall-neon-art-motion-action-flexibil.jpg",
+      "course_details": "Experience the grace and precision of ballet through our comprehensive classes.",
+      "instructor_name": "Jane Doe",
+      "instructor_email": "janedoe@example.com",
+      "student_number": 20,
+      "seat_number": 50
+    },
+    {
+      "course_name": "Hip Hop Dance",
+      "course_price": 89,
+      "course_image": "https://i.ibb.co/NKgSfmM/HG0hy7.jpg",
+      "course_details": "Get your groove on with the latest hip hop dance styles and techniques.",
+      "instructor_name": "Michael Johnson",
+      "instructor_email": "michaeljohnson@example.com",
+      "student_number": 25,
+      "seat_number": 50
+    },
+    {
+      "course_name": "Contemporary Dance",
+      "course_price": 79,
+      "course_image": "https://i.ibb.co/gmJfpVG/slender-teen-ballet-boy-jumps-barefoot-colored-light-298446-680.jpg",
+      "course_details": "Explore the freedom of expression in contemporary dance and enhance your creativity.",
+      "instructor_name": "Sarah Anderson",
+      "instructor_email": "sarahanderson@example.com",
+      "student_number": 20,
+      "seat_number": 50
+    },
+    {
+      "course_name": "Tap Dance Lessons",
+      "course_price": 94,
+      "course_image": "https://i.ibb.co/g7kCKBj/Class-Styles-Descriptions-Media-Site5-1024x576.png",
+      "course_details": "Learn the art of tap dance and create rhythmic patterns with your feet.",
+      "instructor_name": "Robert Davis",
+      "instructor_email": "robertdavis@example.com",
+      "student_number": 25,
+      "seat_number": 50
+    },
+    {
+      "course_name": "Ballroom Dancing",
+      "course_price": 19,
+      "course_image": "https://i.ibb.co/y0x9c9n/181670652-full-length-portrait-of-young-beautiful-man-and-woman-dancing-ballroom-dance-isolated-over.webp",
+      "course_details": "Discover the elegance and sophistication of ballroom dancing in a fun and friendly environment.",
+      "instructor_name": "Emily Wilson",
+      "instructor_email": "emilywilson@example.com",
+      "student_number": 20,
+      "seat_number": 50
+    },
+    {
+      "course_name": "Zumba Fitness",
+      "course_price": 29,
+      "course_image": "https://i.ibb.co/sspg9HP/images-q-tbn-ANd9-Gc-Tstm-E5w0-PJjv-KTN3-c-IAe6y-Jf-PIbg-J2rvt-Jg-usqp-CAU.jpg",
+      "course_details": "Join the high-energy Zumba classes to get fit and have fun with Latin-inspired dance moves.",
+      "instructor_name": "David Thompson",
+      "instructor_email": "davidthompson@example.com",
+      "student_number": 10,
+      "seat_number": 50
+    },
+    {
+      "course_name": "Jazz Dance",
+      "course_price": 75,
+      "course_image": "https://i.ibb.co/bJ16CN3/images-q-tbn-ANd9-Gc-Qiuek6-If-PMNQ3-G6-Y3h-Id-Sp9y-UERDS-a-Qx-GQ-usqp-CAU.jpg",
+      "course_details": "Learn the vibrant and expressive jazz dance techniques with our experienced instructors.",
+      "instructor_name": "Amy Roberts",
+      "instructor_email": "amyroberts@example.com",
+      "student_number": 15,
+      "seat_number": 30
+    },
+    {
+      "course_name": "Breakdance Workshop",
+      "course_price": 45,
+      "course_image": "https://i.ibb.co/thzfF6F/images-q-tbn-ANd9-Gc-Tf-JEr-Uj7-OD37t-Ngph-Kz-IDab-Wjij-Vi-IZbk0g-usqp-CAU.jpg",
+      "course_details": "Master the art of breakdancing with our intensive workshop conducted by renowned breakdancers.",
+      "instructor_name": "Mark Davis",
+      "instructor_email": "markdavis@example.com",
+      "student_number": 10,
+      "seat_number": 20
+    },
+    {
+      "course_name": "Latin Dance",
+      "course_price": 85,
+      "course_image": "https://i.ibb.co/fCt4bF9/images-q-tbn-ANd9-Gc-S8-RPHvy-Lzbwpi-YSPjtxr-Yh-GJ-Ybyx-EIe-L3w-usqp-CAU.jpg",
+      "course_details": "Experience the passion and rhythm of Latin dances, including Salsa, Bachata, and Merengue.",
+      "instructor_name": "Sophia Rodriguez",
+      "instructor_email": "sophiarodriguez@example.com",
+      "student_number": 25,
+      "seat_number": 50
+    },
+    {
+        "course_name": "Bollywood Dance",
+        "course_price": 59,
+        "course_image": "https://i.ibb.co/z4By8KL/images-q-tbn-ANd9-Gc-R-i-VP3-Fz7ab13et5-PXU0-X2i-O67-Tm8h-OOu-VIQ-usqp-CAU.jpg",
+        "course_details": "Learn the vibrant and energetic Bollywood dance style with our talented instructors.",
+        "instructor_name": "Raj Patel",
+        "instructor_email": "rajpatel@example.com",
+        "student_number": 20,
+        "seat_number": 40
+      },
+      {
+        "course_name": "Irish Step Dance",
+        "course_price": 65,
+        "course_image": "https://i.ibb.co/yB99FD1/images-q-tbn-ANd9-Gc-QJtk-ZUq-TPHCQH8-VEEb95-Eo-K7wx-JKRf-J-e-HA-usqp-CAU.jpg",
+        "course_details": "Experience the traditional Irish step dance with our skilled instructors.",
+        "instructor_name": "Aoife Murphy",
+        "instructor_email": "aoifemurphy@example.com",
+        "student_number": 15,
+        "seat_number": 30
+      },
+      {
+        "course_name": "Flamenco Dance",
+        "course_price": 79,
+        "course_image": "https://i.ibb.co/WWJtW8F/images-q-tbn-ANd9-Gc-TJawec-Xvt-Aom-J9j-Crxghp-Pis3-TFi-MQf5-J6bg-usqp-CAU.jpg",
+        "course_details": "Immerse yourself in the passion and intensity of Flamenco dance.",
+        "instructor_name": "Carlos Fernandez",
+        "instructor_email": "carlosfernandez@example.com",
+        "student_number": 20,
+        "seat_number": 40
+      },
+      {
+        "course_name": "Street Dance",
+        "course_price": 69,
+        "course_image": "https://i.ibb.co/g3dmfQf/images-q-tbn-ANd9-Gc-SYyeezi2-CDq-F6-T2x-EJj-RM6v-NNKPQuri8cw-usqp-CAU.jpg",
+        "course_details": "Learn urban dance styles like popping, locking, and hip hop in our street dance classes.",
+        "instructor_name": "Jessica Wilson",
+        "instructor_email": "jessicawilson@example.com",
+        "student_number": 25,
+        "seat_number": 50
+      },
+      {
+        "course_name": "Belly Dance",
+        "course_price": 55,
+        "course_image": "https://i.ibb.co/F3vx5mB/images-q-tbn-ANd9-Gc-RXs-RQj6if-Tirq-Pplx-Atxa-Ba-JOvg-Mo-T9q-w-A-usqp-CAU.jpg",
+        "course_details": "Discover the grace and fluidity of belly dance with our experienced instructors.",
+        "instructor_name": "Leila Ahmed",
+        "instructor_email": "leilaahmed@example.com",
+        "student_number": 15,
+        "seat_number": 30
+      },
+      {
+        "course_name": "Capoeira",
+        "course_price": 75,
+        "course_image": "https://i.ibb.co/XJFNm0F/images-q-tbn-ANd9-Gc-STd-MOLtda-LXrko-Qz-Anra-MC35tkf8z4g-Ad-Zv-A-usqp-CAU.jpg",
+        "course_details": "Learn the Brazilian martial art form combined with dance and acrobatics.",
+        "instructor_name": "Diego Santos",
+        "instructor_email": "diegosantos@example.com",
+        "student_number": 20,
+        "seat_number": 40
+      },
+      {
+        "course_name": "Pole Dance",
+        "course_price": 75,
+        "course_image": "https://i.ibb.co/hFmNQYy/images-q-tbn-ANd9-Gc-Sky-J-8ox7-a-VRrga-Wi-GVKw-LNU150p-f8-ROw-usqp-CAU.jpg",
+        "course_details": "Master the art of pole dance and improve your strength and flexibility.",
+        "instructor_name": "Samantha Collins",
+        "instructor_email": "samanthacollins@example.com",
+        "student_number": 15,
+        "seat_number": 30
+      }
+  ]
+  

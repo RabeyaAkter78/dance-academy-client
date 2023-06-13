@@ -1,0 +1,10 @@
+.home.light {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  /* Styles for dark theme */
+  .home.dark {
+    background-color: #333333;
+    color: #ffffff;
+  }
