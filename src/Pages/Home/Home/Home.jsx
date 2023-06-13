@@ -14,6 +14,7 @@ const Home = () => {
             <PopularClasses></PopularClasses>
             <Instructors></Instructors>
             <UpcomingEvents></UpcomingEvents>
+            {/* <ReactAnime></ReactAnime> */}
         </div>
     );
 };

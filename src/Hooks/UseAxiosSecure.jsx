@@ -9,7 +9,7 @@ const UseAxiosSecure = () => {
     const navigate = useNavigate();
 
     const axiosSecure = axios.create({
-        baseURL: 'https://dance-academy-server-rabeyaakter78.vercel.app/',
+        baseURL: 'http://localhost:5000/',
     });
 
     useEffect(() => {

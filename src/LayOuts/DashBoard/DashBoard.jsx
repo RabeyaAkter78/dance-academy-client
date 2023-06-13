@@ -1,13 +1,16 @@
 import { FaHome, FaBook, FaUsers, FaShoppingCart, FaCalendar, FaBookOpen, FaChalkboardTeacher } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
-import UseClasses from "../../Hooks/UseClasses";
-import UseAdmin from "../../Hooks/UseAdmin";
-import UseInstructor from "../../Hooks/UseInstructor";
+import UseClasses from "../../Hooks/useClasses";
+import UseAdmin from "../../Hooks/useAdmin";
+import UseInstructor from "../../Hooks/useInstructor";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 
 
+
 const DashBoard = () => {
+
+  
   const { user } = useContext(AuthContext);
   const [classes] = UseClasses();
   // console.log(classes,);

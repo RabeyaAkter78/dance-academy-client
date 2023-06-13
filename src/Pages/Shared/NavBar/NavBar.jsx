@@ -60,6 +60,7 @@ const NavBar = () => {
                             {navOptions}
                         </ul>
                     </div>
+                    
                     < >
                         <img src="https://i.ibb.co/W68BLYR/dancelogo.png" alt="" />
 
