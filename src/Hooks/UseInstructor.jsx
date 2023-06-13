@@ -5,13 +5,13 @@ import { AuthContext } from "../Providers/AuthProvider";
 
 const UseInstructor = () => {
     const { user } = useContext(AuthContext);
-    console.log(user?.email);
+    // console.log(user?.email);
     const [axiosSecure] = UseAxiosSecure();
     const { data: isInstructor, isLoading: isInstructorLoading } = useQuery({
         queryKey: ['isInstructor', user?.email],
         queryFn: async () => {
             const res = await axiosSecure.get(`/users/instructor/${user?.email}`);
-            console.log('is Instructor response:', res);
+            // console.log('is Instructor response:', res);
             return res.data.instructor;
         }
     })

@@ -1,16 +1,19 @@
 import { Helmet } from "react-helmet-async";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
 // import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 // import app from "../../../firebase.config";
 import Swal from "sweetalert2";
 import SocialLogin from "../../Shared/SocialLogin/SocialLogin";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 
 // const auth = getAuth(app)
 const Login = () => {
+    const [showPassword, setShowPassword] = useState(false);
+
     const { signIn } = useContext(AuthContext);
     const { register, handleSubmit, formState: { errors } } = useForm();
 
@@ -19,8 +22,6 @@ const Login = () => {
     // console.log('login page location', location);
     const from = location.state?.from?.pathname || '/';
     // console.log(from);
-
-
 
     const onSubmit = data => {
         console.log(data);
@@ -41,6 +42,10 @@ const Login = () => {
                 navigate(from, { replace: true });
 
             })
+    };
+
+    const handleShow = () => {
+        setShowPassword(!showPassword)
     }
 
 
@@ -62,13 +67,22 @@ const Login = () => {
                                 </label>
                                 <input type="text" {...register("email")} placeholder="email" className="input input-bordered" />
                             </div>
-                            <div className="form-control">
+                            <div className="form-control ">
+
+
                                 <label className="label">
                                     <span className="label-text ">Password</span>
                                 </label>
-                                <input type="text"  {...register("password", { required: true })} placeholder="password" className="input input-bordered" />
+                                <input type={showPassword ? "text" : "password"}  {...register("password", { required: true })} placeholder="password" className="input input-bordered" />
                                 {errors.password && <span>PAssword should be six characters</span>}
+
+                                <button onClick={handleShow} className="label">
+                                    {showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
+                                </button>
+
                             </div>
+
+
                             <div className="form-control mt-6">
                                 <button className="btn btn-outline border-0 border-y-2 btn-error  mt-3">Login</button>
                             </div>
@@ -89,3 +103,4 @@ const Login = () => {
 };
 
 export default Login;
+

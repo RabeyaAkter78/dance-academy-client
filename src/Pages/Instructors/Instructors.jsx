@@ -1,10 +1,11 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { useState } from "react";
 import SectionTitle from "../Shared/SectionTitle/SectionTitle";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const Instructors = () => {
     const [instructors, setInstructors] = useState([])
-
+    const { user } = useContext(AuthContext);
 
     useEffect(() => {
         fetch('http://localhost:5000/instructor')
@@ -12,7 +13,7 @@ const Instructors = () => {
             .then(data => {
 
                 setInstructors(data);
-                // console.log(data);
+                console.log(data);
 
 
             })

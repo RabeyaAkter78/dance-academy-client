@@ -18,6 +18,8 @@ import AddClass from "../Pages/DashBoard/Instructor/AddClass/AddClass";
 import MyClass from "../Pages/DashBoard/Instructor/MyClass/MyClass";
 import Instructors from "../Pages/Instructors/Instructors";
 import Error from "../Pages/Error/Error";
+import AdminRoute from "./AdminRoute";
+import InstructorRoute from "./InstructorRoute";
 
 
 export const router = createBrowserRouter([
@@ -71,21 +73,21 @@ export const router = createBrowserRouter([
 
       {
         path: 'manageClasses',
-        element: <ManageClasses></ManageClasses>
+        element: <AdminRoute> <ManageClasses></ManageClasses></AdminRoute>
       },
       {
         path: 'manageUsers',
-        element: <ManageUsers></ManageUsers>
+        element: <AdminRoute><ManageUsers></ManageUsers></AdminRoute>
       },
       // Instructor:
 
       {
         path: 'addClass',
-        element: <AddClass></AddClass>
+        element: <InstructorRoute><AddClass></AddClass></InstructorRoute>
       },
       {
         path: 'myClass',
-        element: <MyClass></MyClass>
+        element: <InstructorRoute><MyClass></MyClass></InstructorRoute>
       },
 
     ]

@@ -27,7 +27,7 @@ const AuthProvider = ({ children }) => {
     }
 
     const updateUserData = (name, photoUrl) => {
-        console.log(name, photoUrl)
+        // console.log(name, photoUrl)
 
         const updatedUser = { ...user }
         updatedUser.displayName = name;
@@ -61,7 +61,7 @@ const AuthProvider = ({ children }) => {
             if (currentUser) {
                 axios.post('http://localhost:5000/jwt', { email: currentUser.email })
                     .then(data => {
-                        console.log(data.data.token);
+                        // console.log(data.data.token);
                         localStorage.setItem('access-token', data.data.token
                         )
                         setLoading(false);
@@ -71,7 +71,7 @@ const AuthProvider = ({ children }) => {
                 localStorage.removeItem('access-token');
             }
 
-            console.log('current user:', currentUser);
+            // console.log('current user:', currentUser);
             setLoading(false);
         });
         
