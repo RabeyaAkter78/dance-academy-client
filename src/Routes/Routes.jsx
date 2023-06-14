@@ -55,7 +55,8 @@ export const router = createBrowserRouter([
     children: [
       {
         path: 'selectedClass',
-        element: <SelectedClass></SelectedClass>
+        element: <SelectedClass></SelectedClass>,
+        loader: ({ params }) => fetch(`http://localhost:5000/selectedClass/${params.id}`)
       },
       {
         path: 'enrolledClass',

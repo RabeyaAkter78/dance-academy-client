@@ -8,7 +8,7 @@ import UseAxiosSecure from "../../../../Hooks/useAxiosSecure";
 
 
 const img_hosting_token = import.meta.env.VITE_image_hosting_token
-console.log(img_hosting_token);
+// console.log(img_hosting_token);
 
 const AddClass = () => {
     const [axiosSecure] = UseAxiosSecure();
@@ -18,12 +18,12 @@ const AddClass = () => {
     const { register, reset, handleSubmit, formState: { errors } } = useForm();
 
     const img_hosting_url = `https://api.imgbb.com/1/upload?key=${img_hosting_token}`
-    console.log(img_hosting_url);
+    // console.log(img_hosting_url);
 
 
 
     const onSubmit = data => {
-        console.log(data);
+        // console.log(data);
 
         const formData = new FormData();
         formData.append('image', data.course_image[0])
@@ -36,7 +36,7 @@ const AddClass = () => {
             .then(imgResponse => {
                 if (imgResponse.success) {
                     const imgURL = imgResponse.data.display_url;
-                    console.log(imgURL);
+                    // console.log(imgURL);
 
                     const { course_name,
                         instructor_email,
@@ -64,7 +64,7 @@ const AddClass = () => {
                         .then(data => {
                             setLoading(false)
                             if (data.data.insertedId) {
-                                console.log(data.data);
+                                // console.log(data.data);
                                 reset()
                                 Swal.fire({
                                     position: '',
@@ -78,11 +78,11 @@ const AddClass = () => {
 
                     console.log(newData);
                 }
-                console.log(imgResponse);
+                // console.log(imgResponse);
             })
     }
 
-    const handleToast = () => {
+    const handleAdd = () => {
         Swal.fire({
             position: 'top',
             icon: 'success',
@@ -166,7 +166,7 @@ const AddClass = () => {
 
                     </div>
                     <div className="form-control mt-6">
-                        <button onClick={handleToast} className="btn btn-error border-0 border-y-2">Add</button>
+                        <button onClick={handleAdd} className="btn btn-error border-0 border-y-2">Add</button>
 
                     </div>
                 </div>

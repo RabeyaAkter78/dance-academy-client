@@ -1,11 +1,19 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import SectionTitle from "../Shared/SectionTitle/SectionTitle";
+import Swal from "sweetalert2";
+import { AuthContext } from "../../Providers/AuthProvider";
+import useSelectCourseData from "../../Hooks/useSelectCourseData";
 
 
 const Classes = () => {
-    const [courses, setCourses] = useState([])
+    const [selecteddatas, refetch] = useSelectCourseData();
+    console.log(selecteddatas);
+
+    const [courses, setCourses] = useState([]);
+    const { user } = useContext(AuthContext);
 
 
+    // get All class Api: 
     useEffect(() => {
         fetch('http://localhost:5000/course')
             .then(res => res.json())
@@ -13,11 +21,36 @@ const Classes = () => {
                 console.log(data);
                 setCourses(data);
             })
-    }, [])
+    }, []);
 
-    const handleSelect = (courses) => {
-        console.log(courses);
-    }
+    // selected class api:
+    const handleSelect = (course) => {
+        const { _id, ...rest } = course;
+        const selectedCourse = { selectedId: _id, ...rest, email: user?.email };
+
+        fetch("http://localhost:5000/selectedClass", {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(selectedCourse)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    refetch();
+                    Swal.fire({
+                        position: 'top',
+                        icon: 'success',
+                        title: 'Successfully Selected!',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
+
+                console.log(data);
+            })
+    };
 
     return (
         <div>
@@ -43,7 +76,7 @@ const Classes = () => {
                                     <p> Student Number: {course.student_number}</p>
                                     <p> Price: ${course.course_price}</p>
                                     <div className="card-actions">
-                                        <button onClick={() => handleSelect(courses)} className="btn btn-sm btn-error btn-outline border-0 border-y-2 mt-2">Select</button>
+                                        <button onClick={() => handleSelect(course)} className="btn btn-sm btn-error btn-outline border-0 border-y-2 mt-2">Select</button>
                                     </div>
                                 </div>
                             </div>

@@ -3,14 +3,11 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Providers/AuthProvider";
 
 import './NavBar.css';
+import useSelectCourseData from "../../../Hooks/useSelectCourseData";
 
 const NavBar = () => {
-    // const [theme, setTheme] = useState('light');
-
-    // const handleThemeToggle = () => {
-    //     const newTheme = theme === 'light' ? 'dark' : 'light';
-    //     setTheme(newTheme);
-    // };
+    const [selecteddatas] = useSelectCourseData();
+    console.log(selecteddatas);
 
     const { user, logOut } = useContext(AuthContext);
     console.log(user);
@@ -27,7 +24,7 @@ const NavBar = () => {
         <li><Link to="/">HOME</Link></li>
         <li><Link to="/instructors">INSTRUCTORS</Link></li>
         <li><Link to="/classes">CLASSES</Link></li>
-        <li><Link to="/dashboard">DASHBOARD</Link></li>
+        <li><Link to="/dashboard">DASHBOARD {selecteddatas.length} </Link></li>
 
         <li>
             <label className="swap swap-rotate">
@@ -60,7 +57,7 @@ const NavBar = () => {
                             {navOptions}
                         </ul>
                     </div>
-                    
+
                     < >
                         <img src="https://i.ibb.co/W68BLYR/dancelogo.png" alt="" />
 

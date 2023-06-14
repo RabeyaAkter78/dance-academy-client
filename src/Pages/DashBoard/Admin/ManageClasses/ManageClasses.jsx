@@ -17,18 +17,13 @@ const ManageClasses = () => {
 
     console.log(datas);
 
+    const handleAccept = (id) => {
+        console.log(id)
+    };
 
-    // const [courses, setCourses] = useState([])
-    // const { user } = useContext(AuthContext);
-
-    // useEffect(() => {
-    //     fetch('http://localhost:5000/course')
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             console.log(data);
-    //             setCourses(data);
-    //         })
-    // }, [])
+    const handlDenied = (id) => {
+        console.log(id)
+    }
 
 
     return (
@@ -70,24 +65,20 @@ const ManageClasses = () => {
                                 </td>
                                 <td>{course.course_name}</td>
                                 <td>{course.instructor_name}</td>
-                                <td>{course.email}</td>
+                                <td>{course.instructor_email}</td>
                                 <td>{course.available_seats}</td>
-                                <td>${course.price}</td>
+                                <td>${course.course_price}</td>
                                 <th>
-                                    
+
                                     <button className="btn btn-neutral border-0 border-b-2 btn-outline btn-xs mb-4">{course.status}</button>
-                                    <button className="btn btn-success border-0 border-b-2 btn-outline btn-xs mb-4">Accept</button>
-                                    <button className="btn btn-error border-0 border-b-2 btn-outline btn-xs">Denied</button>
+                                    <button onClick={()=>handleAccept(course._id)} className="btn btn-success border-0 border-b-2 btn-outline btn-xs mb-4">Accept</button>
+                                    <button onClick={()=>handlDenied(course._id)}  className="btn btn-error border-0 border-b-2 btn-outline btn-xs">Denied</button>
                                 </th>
                                 <th>
                                     <button className="btn btn-info border-0 border-b-2 btn-outline btn-xs">FeedBack</button>
                                 </th>
                             </tr>)
                         }
-
-
-
-
                     </tbody>
 
 

@@ -47,14 +47,12 @@ const PopularclassNamees = () => {
 
                                     <p className="mb-3 text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">Available seat: {course.seat_number - course.student_number}</p>
 
-                                    <button className="rounded-full bg-neutral-900 py-2 px-3  text-sm  text-white shadow shadow-black/60">See More</button>
+                                    <button className="btn btn-outline border-0 border-y-4 rounded bg-red-900 py-2 px-3  text-sm  text-white shadow shadow-black/60">Select</button>
                                 </div>
                             </div>
 
                         </div>)
                     }
-
-
 
                 </div>
             </div>

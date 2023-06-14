@@ -5,11 +5,13 @@ import UseAdmin from "../../Hooks/useAdmin";
 import UseInstructor from "../../Hooks/useInstructor";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
+import useSelectCourseData from "../../Hooks/useSelectCourseData";
 
 
 
 const DashBoard = () => {
-
+const[selecteddatas]=useSelectCourseData();
+// console.log(selecteddatas);
   
   const { user } = useContext(AuthContext);
   const [classes] = UseClasses();
@@ -58,7 +60,7 @@ const DashBoard = () => {
                 // student:
                 <>
                   <li><NavLink to='/dashBoard/selectedClass'><FaShoppingCart></FaShoppingCart> My Selected Class
-                    <span className="badge inl badge-secondary">+0</span>
+                    <span className="badge inl badge-secondary">{selecteddatas?.length || 0}</span>
 
                   </NavLink></li>
                   <li><NavLink to='/dashBoard/enrolledClass'><FaShoppingCart></FaShoppingCart> My Enrolled Class

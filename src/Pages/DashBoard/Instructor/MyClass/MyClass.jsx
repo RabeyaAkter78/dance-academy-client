@@ -5,19 +5,16 @@ import { AuthContext } from "../../../../Providers/AuthProvider";
 
 const MyClass = () => {
     const { user } = useContext(AuthContext);
-    const [classes, setClasses] = useState([])
-
-
+    const [classes, setClasses] = useState([]);
+    console.log(classes);
     useEffect(() => {
         fetch(`http://localhost:5000/myClass?email=${user?.email}`)
             .then(res => res.json())
             .then(data => {
-
                 setClasses(data);
-                // console.log(data);
+                console.log(data);
             })
     }, [user?.email])
-
 
     return (
         <div className="">
@@ -31,7 +28,7 @@ const MyClass = () => {
                     {/* head */}
                     <thead>
                         <tr>
-                            <th>#</th>
+                            <th>##</th>
                             <th>Class Image</th>
                             <th>Class Name</th>
                             <th>Availabe Seat</th>
@@ -41,19 +38,15 @@ const MyClass = () => {
                         </tr>
                     </thead>
                     <tbody >
-                        {classes.map((course, index) => <tr key={course._id}>
+                        {classes?.map((course, index) => <tr key={course._id}>
                             <th>{index + 1}</th>
                             <td >
-                                <img className="w-12 h-12 mask mask-squircle" style={{ borderRadius: '0 200px 200px 0' }} src={course.course_Image} alt="" />
+                                <img className="w-12 h-12 mask mask-squircle" style={{ borderRadius: '0 200px 200px 0' }} src={course.course_image} alt="" />
                             </td>
                             <td>{course.course_name}</td>
                             <td>{course.available_seats}</td>
-                            <td> $ {course.price}</td>
-                            <td className="flex flex-col justify-center items-center">
-                                <button className="btn btn-neutral border-0 border-b-2 btn-outline btn-xs mb-4">Pending</button>
-                                <button className="btn btn-success border-0 border-b-2 btn-outline btn-xs mb-4">Accept</button>
-                                <button className="btn btn-error border-0 border-b-2 btn-outline btn-xs">Denied</button>
-                            </td>
+                            <td> $ {course.course_price}</td>
+                            <td className="flex flex-col justify-center items-center">{course.status}</td>
                             <td >
                                 <button className="btn btn-info border-0 border-b-2 btn-outline btn-xs">FeedBack</button>
                             </td>
