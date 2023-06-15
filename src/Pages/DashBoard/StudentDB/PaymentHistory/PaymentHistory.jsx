@@ -29,7 +29,7 @@ const PaymentHistory = () => {
                 subHeading={'Your Payment History'}
             ></SectionTitle>
 
-            <div className="overflow-x-auto w-full">
+            <div className="overflow-y-auto w-full">
                 <table className="table table-zebra w-full ">
                     {/* head */}
                     <thead>
@@ -52,7 +52,7 @@ const PaymentHistory = () => {
                             <div className="flex items-center space-x-3">
                                 <div className="avatar">
                                     <div className="mask mask-squircle w-12 h-12">
-                                        <img src={data.image} alt="Avatar Tailwind CSS Component" />
+                                        <img src={data.course_image} alt="Avatar Tailwind CSS Component" />
                                     </div>
                                 </div>
                             </div>

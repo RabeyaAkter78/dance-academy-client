@@ -12,8 +12,12 @@ const Payment = () => {
     const location = useLocation();
     const data = location.state;
     const classPrice = data.course_price;
-    const image = data.course_image;
+    const course_image = data.course_image;
     const id = data._id
+    const course_name = data.course_name;
+    const instructor_name = data.instructor_name;
+    const instructor_email = data.instructor_email;
+    const seat_number = data.seat_number;
     // console.log(classPrice, id, image);
 
     const price = parseFloat(classPrice.toFixed(2))
@@ -32,7 +36,12 @@ const Payment = () => {
                 <CheckoutForm
                     price={price}
                     id={id}
-                    image={image}
+                    course_image={course_image}
+
+                    course_name={course_name}
+                    instructor_name={instructor_name}
+                    instructor_email={instructor_email}
+                    seat_number={seat_number}
                 ></CheckoutForm>
 
             </Elements>

@@ -48,7 +48,7 @@ const MyClass = () => {
                             <td> $ {course.course_price}</td>
                             <td className="flex flex-col justify-center items-center">{course.status}</td>
                             <td >
-                                <button className="btn btn-info border-0 border-b-2 btn-outline btn-xs">FeedBack</button>
+
                             </td>
 
                         </tr>

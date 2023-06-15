@@ -5,7 +5,8 @@ import { AuthContext } from "../../../../Providers/AuthProvider";
 import useSelectCourseData from "../../../../Hooks/useSelectCourseData";
 import Swal from "sweetalert2";
 
-const CheckoutForm = ({ price, id, image }) => {
+const CheckoutForm = ({ price, id, course_image, course_name, instructor_name,
+    instructor_email, seat_number }) => {
     const { user } = useContext(AuthContext);
     const [selecteddatas] = useSelectCourseData();
     const stripe = useStripe();
@@ -76,20 +77,27 @@ const CheckoutForm = ({ price, id, image }) => {
             // save payment indormation to the server:
 
             const payment = {
+                transectionId: paymentIntent.id,
+                date: new Date(),
+
                 name: user?.displayName,
                 email: user?.email,
-                transectionId: paymentIntent.id,
+                course_image,
+                course_name,
                 price,
-                image,
-                id,
-                date: new Date(),
+                id, 
+                instructor_name,
+                instructor_email,
+                seat_number
+
 
             }
             axiosSecure.post('/payments', payment)
                 .then(res => {
-                    console.log(res.data);
+                    // console.log(res.data);
 
                     if (res.data.insertedId) {
+                        // TODO:reset korte hobe:
                         Swal.fire({
                             position: '',
                             icon: 'success',
