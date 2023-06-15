@@ -2,13 +2,13 @@ import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { useContext, useEffect, useState } from "react";
 import UseAxiosSecure from "../../../../Hooks/useAxiosSecure";
 import { AuthContext } from "../../../../Providers/AuthProvider";
-import useSelectCourseData from "../../../../Hooks/useSelectCourseData";
+// import useSelectCourseData from "../../../../Hooks/useSelectCourseData";
 import Swal from "sweetalert2";
 
 const CheckoutForm = ({ price, id, course_image, course_name, instructor_name,
     instructor_email, seat_number }) => {
     const { user } = useContext(AuthContext);
-    const [selecteddatas] = useSelectCourseData();
+    // const [selecteddatas] = useSelectCourseData();
     const stripe = useStripe();
     const elements = useElements();
     const [error, setError] = useState('');

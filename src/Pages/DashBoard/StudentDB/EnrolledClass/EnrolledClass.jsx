@@ -56,7 +56,7 @@ const EnrolledClass = () => {
                             </div>
                             <td>{data.course_name}</td>
                             <td>{data.instructor_name}</td>
-                            <td> $ {data.instructor_email}</td>
+                            <td>{data.instructor_email}</td>
                             <td>{data.seat_number}</td>
                             <td> $ {data.price}</td>
 

@@ -2,29 +2,44 @@
 import { FaTrash, FaWallet } from "react-icons/fa";
 import useSelectCourseData from "../../../../Hooks/useSelectCourseData";
 import SectionTitle from "../../../Shared/SectionTitle/SectionTitle";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
-import { Link, useParams } from "react-router-dom";
-import { useEffect } from "react";
-// import Swal from "sweetalert2";
 
 
 const SelectedClass = () => {
     const [selecteddatas, refetch] = useSelectCourseData();
     console.log(selecteddatas);
 
-    // const { id } = useParams();
+    const handleDelete = (id) => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/selectedClass/${id}`,
+                    {
+                        method: 'DELETE'
+                    })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.deletedCount > 0) {
+                            refetch();
 
-    // const handlePay = () => {
-
-    //     fetch(`http://localhost:5000/selectedClass/${id}`)
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             console.log(data);
-    //         })
-    // }
-
-
-
+                            Swal.fire(
+                                'Deleted!',
+                                'Your file has been deleted.',
+                                'success'
+                            )
+                        }
+                    })
+            }
+        })
+    }
 
     return (
         <div>
@@ -32,7 +47,6 @@ const SelectedClass = () => {
                 heading={"Your Selected Class"}
                 subHeading={"“When you dance, your purpose is not to get a certain place on the floor. It’s to enjoy every step along the way!”"}
             ></SectionTitle>
-
 
             <div className="overflow-x-auto">
                 <table className="table">
@@ -69,13 +83,13 @@ const SelectedClass = () => {
                                 <td>{course.email}</td>
                                 <td>${course.course_price}</td>
                                 <th>
-                                    <button className="btn btn-error border-0 border-b-2 btn-outline btn-md"><FaTrash></FaTrash></button>
+                                    <button onClick={() => handleDelete(course._id)} className="btn btn-error border-0 border-b-2 btn-outline btn-md"><FaTrash></FaTrash></button>
                                 </th>
                                 <th>
                                     {/* state={course.course_price} */}
                                     <Link to="/dashboard/payment" state={course} >
                                         <button className="btn btn-accent border-0 border-b-2 btn-outline btn-md text-white "><FaWallet></FaWallet></button>
-                                        {/* <button onClick={handlePay} className="btn btn-accent border-0 border-b-2 btn-outline btn-md text-white "><FaWallet></FaWallet></button> */}
+
                                     </Link>
                                 </th>
                             </tr>)

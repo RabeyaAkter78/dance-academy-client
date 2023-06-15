@@ -1,6 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 const ManageClasses = () => {
@@ -18,11 +20,35 @@ const ManageClasses = () => {
     console.log(datas);
 
     const handleAccept = (id) => {
-        console.log(id)
-    };
+        fetch(`http://localhost:5000/aproveCourses/${id}`, {
+            method: "PATCH"
+        })
+            .then(() => {
+                refetch();
+                Swal.fire({
+                    position: '',
+                    icon: 'success',
+                    title: 'Course is approved',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            })
+    }
 
-    const handlDenied = (id) => {
-        console.log(id)
+    const handleDenied = (id) => {
+        fetch(`http://localhost:5000/deniedCourses/${id}`, {
+            method: "PATCH"
+        })
+            .then(() => {
+                refetch();
+                Swal.fire({
+                    position: '',
+                    icon: 'success',
+                    title: 'Course is Denied',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            })
     }
 
 
@@ -40,7 +66,7 @@ const ManageClasses = () => {
                         <tr >
                             <th>#</th>
                             <th>Class Image</th>
-                            <th>Class NAme</th>
+                            <th>Class Name</th>
                             <th>Instructor</th>
                             <th>Instructor Email</th>
                             <th>Available seat</th>
@@ -71,11 +97,27 @@ const ManageClasses = () => {
                                 <th>
 
                                     <button className="btn btn-neutral border-0 border-b-2 btn-outline btn-xs mb-4">{course.status}</button>
-                                    <button onClick={()=>handleAccept(course._id)} className="btn btn-success border-0 border-b-2 btn-outline btn-xs mb-4">Accept</button>
-                                    <button onClick={()=>handlDenied(course._id)}  className="btn btn-error border-0 border-b-2 btn-outline btn-xs">Denied</button>
+
+                                    {
+                                        course.status === 'approved' ?
+                                            <button className="btn btn-success border-0 border-b-2 btn-outline bg-green-300 btn-xs mb-4">Accepted</button>
+                                            :
+                                            <button onClick={() => handleAccept(course._id)} className="btn btn-success border-0 border-b-2 btn-outline btn-xs mb-4">Accept</button>
+                                    }
+
+                                    {
+                                        course.status === 'denied' ?
+                                            <button className="btn btn-error border-0 border-b-2 bg-neutral-500 btn-outline btn-xs">Denied</button>
+                                            :
+                                            <button onClick={() => handleDenied(course._id)} className="btn btn-error border-0 border-b-2 btn-outline btn-xs">Denie</button>
+                                    }
+
+
                                 </th>
                                 <th>
-                                    <button className="btn btn-info border-0 border-b-2 btn-outline btn-xs">FeedBack</button>
+                                    <Link to='/dashBoard/feedBack' state={course}>
+                                        <button className="btn btn-info border-0 border-b-2 btn-outline btn-xs">FeedBack</button>
+                                    </Link>
                                 </th>
                             </tr>)
                         }
