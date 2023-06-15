@@ -68,7 +68,7 @@ const[selecteddatas]=useSelectCourseData();
 
                   </NavLink></li>
 
-                  <li><NavLink to='/dashBoard/payment'><FaCalendar></FaCalendar>Payment</NavLink></li>
+                  {/* <li><NavLink to='/dashBoard/payment'><FaCalendar></FaCalendar>Payment</NavLink></li> */}
 
                   <li><NavLink to='/dashBoard/paymentHistory'><FaCalendar></FaCalendar>Payment History</NavLink></li>
 

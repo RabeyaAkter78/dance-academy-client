@@ -2,9 +2,12 @@ import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { useContext, useEffect, useState } from "react";
 import UseAxiosSecure from "../../../../Hooks/useAxiosSecure";
 import { AuthContext } from "../../../../Providers/AuthProvider";
+import useSelectCourseData from "../../../../Hooks/useSelectCourseData";
+import Swal from "sweetalert2";
 
-const CheckoutForm = ({ price }) => {
+const CheckoutForm = ({ price, id, image }) => {
     const { user } = useContext(AuthContext);
+    const [selecteddatas] = useSelectCourseData();
     const stripe = useStripe();
     const elements = useElements();
     const [error, setError] = useState('');
@@ -22,7 +25,7 @@ const CheckoutForm = ({ price }) => {
                 setClientSecret(res.data.clientSecret);
             })
 
-    }, [])
+    }, [price, axiosSecure])
 
 
 
@@ -69,6 +72,33 @@ const CheckoutForm = ({ price }) => {
 
         if (paymentIntent.status === 'succeeded') {
             setTransectionId(paymentIntent.id)
+
+            // save payment indormation to the server:
+
+            const payment = {
+                name: user?.displayName,
+                email: user?.email,
+                transectionId: paymentIntent.id,
+                price,
+                image,
+                id,
+                date: new Date(),
+
+            }
+            axiosSecure.post('/payments', payment)
+                .then(res => {
+                    console.log(res.data);
+
+                    if (res.data.insertedId) {
+                        Swal.fire({
+                            position: '',
+                            icon: 'success',
+                            title: 'Payment Successful!',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    }
+                });
 
         }
 
