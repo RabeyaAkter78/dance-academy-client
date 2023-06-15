@@ -13,9 +13,9 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 // const auth = getAuth(app)
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
-
+    const [error, setError] = useState();
     const { signIn } = useContext(AuthContext);
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -31,6 +31,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                
                 Swal.fire({
                     position: 'top',
                     icon: 'success',
@@ -41,6 +42,11 @@ const Login = () => {
 
                 navigate(from, { replace: true });
 
+            })
+            .catch(error => {
+                console.log(error.message);
+                setError(error.message);
+                reset();
             })
     };
 
@@ -81,7 +87,7 @@ const Login = () => {
                                 </button>
 
                             </div>
-
+                            <p className="text-red-500">{error}</p>
 
                             <div className="form-control mt-6">
                                 <button className="btn btn-outline border-0 border-y-2 btn-error  mt-3">Login</button>
@@ -91,7 +97,6 @@ const Login = () => {
 
                             </div>
                             <SocialLogin></SocialLogin>
-
                             {/* <Link to="/" className="btn btn-outline btn-sm border-0 border-y-2 btn-error mt-3">Go To Home</Link> */}
                         </form>
                     </div>

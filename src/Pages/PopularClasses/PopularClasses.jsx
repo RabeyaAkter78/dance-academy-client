@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import SectionTitle from '../Shared/SectionTitle/SectionTitle';
 // import Classes from '../Shared/Classes/Classes';
-
+import { motion } from "framer-motion"
 
 const PopularclassNamees = () => {
     const [classes, setClasses] = useState([])
@@ -23,10 +23,13 @@ const PopularclassNamees = () => {
 
     return (
         <div>
-            <SectionTitle
-                heading={"Popular classes"}
-                subHeading={"“Dance is your pulse, your heartbeat, your breathing. It’s the rhythm of your life. It’s the expression in time and movement, in happiness, joy, sadness, and envy,” — Jacques d’Amboise, the American ballet dancer and choreographer, once said."}
-            ></SectionTitle>
+           
+                <SectionTitle
+                    heading={"Popular classes"}
+                    subHeading={"“Dance is your pulse, your heartbeat, your breathing. It’s the rhythm of your life. It’s the expression in time and movement, in happiness, joy, sadness, and envy,” — Jacques d’Amboise, the American ballet dancer and choreographer, once said."}
+                ></SectionTitle>
+
+
 
 
             <div className="flex min-h-screen items-center justify-center bg-pink-50 my-14">
@@ -56,7 +59,7 @@ const PopularclassNamees = () => {
 
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 

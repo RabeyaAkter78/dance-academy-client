@@ -7,6 +7,7 @@ import { AuthContext } from "../../../Providers/AuthProvider";
 
 import Swal from "sweetalert2";
 import SocialLogin from "../../Shared/SocialLogin/SocialLogin";
+import { useState } from "react";
 
 
 
@@ -15,7 +16,7 @@ import SocialLogin from "../../Shared/SocialLogin/SocialLogin";
 const SignUp = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const { createUser, updateUserData, logOut } = useContext(AuthContext);
-
+    const [error, setError] = useState();
     const navigate = useNavigate();
 
 
@@ -61,7 +62,7 @@ const SignUp = () => {
                     })
 
                     .catch(error => {
-                        console.log(error);
+                        setError(error.message);
                     })
             })
 
@@ -152,6 +153,7 @@ const SignUp = () => {
                             <div className="">
                                 <h3>Already Have An Account? Please <Link to="/login"><span className="font-bold">Login</span></Link> </h3>
                             </div>
+                            <p className="text-red-500">{error}</p>
                             <SocialLogin></SocialLogin>
                         </form>
                     </div>
