@@ -27,7 +27,7 @@ const Footer = () => {
             <footer className="footer px-10 py-4 border-t bg-base-content text-white  border-base-300">
                 <div className="items-center grid-flow-col">
                 <img src="https://i.ibb.co/W68BLYR/dancelogo.png" alt="" />
-                    <p>ACME Industries Ltd. <br />Providing reliable tech since 1992</p>
+                    <p>Dance Academy Ltd. <br />Providing reliable tech since 1992</p>
                 </div>
                 <div className="md:place-self-center md:justify-self-end">
                     <div className="grid grid-flow-col gap-4">
@@ -39,7 +39,7 @@ const Footer = () => {
             </footer>
             <footer className="footer footer-center p-4  bg-base-content text-white">
                 <div>
-                    <p>Copyright © 2023 - All right reserved by ACME Industries Ltd</p>
+                    <p>Copyright © 2023 - All right reserved by This Industries Ltd</p>
                 </div>
             </footer>
         </div>

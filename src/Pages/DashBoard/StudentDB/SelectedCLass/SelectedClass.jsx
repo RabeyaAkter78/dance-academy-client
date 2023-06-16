@@ -48,7 +48,7 @@ const SelectedClass = () => {
                 subHeading={"“When you dance, your purpose is not to get a certain place on the floor. It’s to enjoy every step along the way!”"}
             ></SectionTitle>
 
-            <div className="overflow-x-auto">
+            <div className=" overflow-y-auto">
                 <table className="table">
                     {/* head */}
                     <thead>

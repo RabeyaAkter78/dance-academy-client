@@ -38,7 +38,7 @@ const MyClass = () => {
                             <th>Enrolled Student</th>
                             <th>Update</th>
                             <th>Status</th>
-                            
+
                         </tr>
                     </thead>
                     <tbody >
@@ -66,15 +66,27 @@ const MyClass = () => {
                     </tbody>
                 </table>
             </div>
-            {
-                classes.map(course =>
-                    course.feedBack && <div key={course._id}>
-                        <img src={course.course_image} alt="" />
-                        <p>{course.feedBack}</p>
-                    </div>
-                )
-            }
+            <div className="my-8">
+                <SectionTitle
+                    heading={"FeedBack Section"}
+                    subHeading={""}
+                ></SectionTitle>
 
+                <div className="flex flex-col items-center justify-center">
+                    {
+                        classes.map(course =>
+                            course.feedBack && <div key={course._id}>
+
+                                <img className="rounded-lg text-center" src={course.course_image} alt="" />
+                                <p className="text-center font-medium mt-8" >FeedBack for this class: <span className="text-3xl"> {course.course_name}</span></p>
+                                <p className="text-center font-medium mt-4" >Id Number: {course._id}</p>
+                                <p className="text-center font-medium mt-8 text-2xl">Feedback:{course.feedBack}</p>
+                            </div>
+                        )
+                    }
+                </div>
+
+            </div>
 
 
 

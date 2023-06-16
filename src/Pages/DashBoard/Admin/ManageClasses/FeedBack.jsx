@@ -32,7 +32,7 @@ const FeedBack = () => {
 
     return (
         <div>
-            <div className="overflow-x-auto">
+            <div className="overflow-y-auto">
                 <table className="table">
                     {/* head */}
                     <thead>

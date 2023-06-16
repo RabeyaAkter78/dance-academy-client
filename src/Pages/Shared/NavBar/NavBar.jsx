@@ -29,7 +29,7 @@ const NavBar = () => {
         }
 
         <li>
-            <label className="swap swap-rotate">
+            <label className="swap swap-rotate ml-4 mt-2 h-[15px] w-[15px]">
 
                 {/* this hidden checkbox controls the state */}
                 <input type="checkbox" />

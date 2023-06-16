@@ -30,7 +30,7 @@ const Instructors = () => {
     return (
         <div>
             <SectionTitle
-                heading={"Our Hero's"}
+                heading={"Our Best Dancers"}
                 subHeading={"“When you dance, your purpose is not to get a certain place on the floor. It’s to enjoy every step along the way!”"}
             ></SectionTitle>
 

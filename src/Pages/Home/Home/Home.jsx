@@ -3,18 +3,19 @@ import Banner from "../Banner/Banner";
 import PopularClasses from "../../PopularClasses/PopularClasses";
 import Instructors from "../../Instructors/Instructors";
 import UpcomingEvents from "../../UpcomingEvents/UpcomingEvents";
+import Contackus from "../../Contackus";
 
 const Home = () => {
     return (
         <div>
-             <Helmet>
+            <Helmet>
                 <title>Dance | Home</title>
             </Helmet>
             <Banner></Banner>
             <PopularClasses></PopularClasses>
             <Instructors></Instructors>
             <UpcomingEvents></UpcomingEvents>
-            {/* <ReactAnime></ReactAnime> */}
+            <Contackus></Contackus>
         </div>
     );
 };
