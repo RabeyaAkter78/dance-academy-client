@@ -59,7 +59,6 @@ const ManageUsers = () => {
                 }
 
             })
-        // setDisabled(true).includes(user._id);
 
     }
 
@@ -134,7 +133,7 @@ const ManageUsers = () => {
                                     <button onClick={() => handleMakeAdmin(user)} className="btn btn-outline border-0 border-y-2 btn-error  mt-3"> Admin</button>
                                 }
                                 {user.role === 'instructor' ?
-                                    <button className="btn btn-outline border-0 border-y-2  bg-gray-800  mt-3" disabled> Instructor</button>
+                                    <button className="btn btn-outline border-0 border-y-2  bg-gray-700  mt-3" disabled> Instructor</button>
                                     :
                                     <button onClick={() => handleMakeInstructor(user)} className="btn btn-outline border-0 border-y-2 btn-error  mt-3"> Instructor</button>
                                 }

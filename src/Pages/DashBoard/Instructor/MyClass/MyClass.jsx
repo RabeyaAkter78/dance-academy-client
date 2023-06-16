@@ -17,10 +17,9 @@ const MyClass = () => {
             })
     }, [user?.email])
 
-    // console.log(classes.feedBack);
 
     return (
-        <div className="">
+        <div >
             <SectionTitle
                 heading={`${user?.displayName}`}
                 subHeading={`Instructor Email:${user?.email}`}

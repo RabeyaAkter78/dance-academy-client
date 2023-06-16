@@ -68,7 +68,7 @@ const DashBoard = () => {
 
                     {/* ?TODO: enrolled student number */}
                     <li><NavLink to='/dashBoard/enrolledClass'><FaShoppingCart></FaShoppingCart> My Enrolled Class
-                      <span className="badge inl badge-secondary">{0}</span>
+                      {/* <span className="badge inl badge-secondary"></span> */}
 
                     </NavLink></li>
 

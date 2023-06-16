@@ -9,7 +9,7 @@ const PaymentHistory = () => {
     const [payments, setPayments] = useState([]);
     console.log(payments);
     useEffect(() => {
-        fetch('https://dance-academy-server-rabeyaakter78.vercel.app/payments')
+        fetch(`https://dance-academy-server-rabeyaakter78.vercel.app/payments?email=${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setPayments(data);
@@ -36,7 +36,7 @@ const PaymentHistory = () => {
                         <tr>
                             <th>#</th>
                             <th>Class</th>
-                            <th>Name</th>
+                            {/* <th>Name</th> */}
                             <th>Email</th>
                             <th>Price</th>
                             <th>TransactionID</th>
@@ -56,8 +56,8 @@ const PaymentHistory = () => {
                                     </div>
                                 </div>
                             </div>
-                            <td>{user.displayName}</td>
-                            <td>{user.email}</td>
+                            <td>{data.email}</td>
+                            {/* <td>{user.name}</td> */}
                             <td> $ {data.price}</td>
                             <td>{data.transectionId}</td>
                             <td>{data.date}</td>
