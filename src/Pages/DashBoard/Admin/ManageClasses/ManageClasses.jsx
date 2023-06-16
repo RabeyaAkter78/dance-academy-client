@@ -7,6 +7,9 @@ import Swal from "sweetalert2";
 
 const ManageClasses = () => {
 
+
+
+
     const { data: datas = [], refetch } = useQuery({
 
 
@@ -100,14 +103,14 @@ const ManageClasses = () => {
 
                                     {
                                         course.status === 'approved' ?
-                                            <button className="btn btn-success border-0 border-b-2 btn-outline bg-green-300 btn-xs mb-4">Accepted</button>
+                                            <button className="btn btn-success border-0 border-b-2 btn-outline bg-gray-800 btn-xs mb-4" disabled>Accepted</button>
                                             :
-                                            <button onClick={() => handleAccept(course._id)} className="btn btn-success border-0 border-b-2 btn-outline btn-xs mb-4">Accept</button>
+                                            <button onClick={() => handleAccept(course._id)} className="btn btn-success border-0 border-b-2 btn-outline btn-xs mb-4">Approve</button>
                                     }
 
                                     {
                                         course.status === 'denied' ?
-                                            <button className="btn btn-error border-0 border-b-2 bg-neutral-500 btn-outline btn-xs">Denied</button>
+                                            <button className="btn btn-error border-0 border-b-2 bg-neutral-800 btn-outline btn-xs" disabled>Denied</button>
                                             :
                                             <button onClick={() => handleDenied(course._id)} className="btn btn-error border-0 border-b-2 btn-outline btn-xs">Denie</button>
                                     }

@@ -24,7 +24,9 @@ const NavBar = () => {
         <li><Link to="/">HOME</Link></li>
         <li><Link to="/instructors">INSTRUCTORS</Link></li>
         <li><Link to="/classes">CLASSES</Link></li>
-        <li><Link to="/dashboard">DASHBOARD {selecteddatas?.length || 0} </Link></li>
+        {user &&
+            <li><Link to="/dashboard">DASHBOARD {selecteddatas?.length || 0} </Link></li>
+        }
 
         <li>
             <label className="swap swap-rotate">

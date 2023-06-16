@@ -13,7 +13,7 @@ const FeedBack = () => {
         const form = event.target;
         const formdata = form.textArea.value;
 
-        axios.patch(`/adminFeedBack/${data._id}`, { adminFeedBack: formdata })
+        axios.patch(`http://localhost:5000/adminFeedBack/${data._id}`, { adminFeedBack: formdata })
             .then(res => {
                 console.log(res.data)
                 if (res.data.acknowledged) {
@@ -29,9 +29,6 @@ const FeedBack = () => {
 
         form.reset();
     };
-
-
-
 
     return (
         <div>

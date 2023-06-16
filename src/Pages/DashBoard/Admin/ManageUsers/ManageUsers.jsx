@@ -125,12 +125,21 @@ const ManageUsers = () => {
                             <td>{user.name}</td>
                             <td>{user.email}</td>
                             <td className="flex gap-4">
-                                {user.role === 'admin' ? 'admin' :
+
+
+                                {user.role === 'admin' ?
+                                    <button className="btn btn-outline border-0 border-y-2  bg-gray-800   mt-3" disabled> Admin</button>
+
+                                    :
                                     <button onClick={() => handleMakeAdmin(user)} className="btn btn-outline border-0 border-y-2 btn-error  mt-3"> Admin</button>
                                 }
-                                {user.role === 'instructor' ? 'instructor' :
+                                {user.role === 'instructor' ?
+                                    <button className="btn btn-outline border-0 border-y-2  bg-gray-800  mt-3" disabled> Instructor</button>
+                                    :
                                     <button onClick={() => handleMakeInstructor(user)} className="btn btn-outline border-0 border-y-2 btn-error  mt-3"> Instructor</button>
                                 }
+
+
                             </td>
                             <td>
                                 <button onClick={() => handleDelete(user)} className="btn btn-ghost font-bold btn-md text-white bg-red-600"><FaTrash></FaTrash></button>

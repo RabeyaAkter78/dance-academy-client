@@ -13,7 +13,7 @@ const DashBoard = () => {
 
 
   const { user } = useContext(AuthContext);
-  
+
 
   // TODO: load data from the server to have dynamic isAdmin based on data:
   // const isAdmin = false;
@@ -63,6 +63,8 @@ const DashBoard = () => {
 
                     </NavLink></li>
 
+
+                    {/* ?TODO: enrolled student number */}
                     <li><NavLink to='/dashBoard/enrolledClass'><FaShoppingCart></FaShoppingCart> My Enrolled Class
                       <span className="badge inl badge-secondary">{0}</span>
 

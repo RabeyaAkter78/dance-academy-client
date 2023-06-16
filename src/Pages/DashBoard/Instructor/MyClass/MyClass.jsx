@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import SectionTitle from "../../../Shared/SectionTitle/SectionTitle";
 import { AuthContext } from "../../../../Providers/AuthProvider";
+import { FaPen } from "react-icons/fa";
 
 
 const MyClass = () => {
@@ -15,6 +16,8 @@ const MyClass = () => {
                 console.log(data);
             })
     }, [user?.email])
+
+    // console.log(classes.feedBack);
 
     return (
         <div className="">
@@ -31,10 +34,11 @@ const MyClass = () => {
                             <th>##</th>
                             <th>Class Image</th>
                             <th>Class Name</th>
-                            <th>Availabe Seat</th>
                             <th>Prcice</th>
+                            <th>Enrolled Student</th>
+                            <th>Update</th>
                             <th>Status</th>
-                            <th>See FeedBack</th>
+                            
                         </tr>
                     </thead>
                     <tbody >
@@ -44,8 +48,11 @@ const MyClass = () => {
                                 <img className="w-12 h-12 mask mask-squircle" style={{ borderRadius: '0 200px 200px 0' }} src={course.course_image} alt="" />
                             </td>
                             <td>{course.course_name}</td>
-                            <td>{course.available_seats}</td>
                             <td> $ {course.course_price}</td>
+                            <td>{course.student_number}</td>
+                            <td>
+                                <button className="btn btn-circle btn-outline btn-success border-0 border-b-4"><FaPen></FaPen></button>
+                            </td>
                             <td className="flex flex-col justify-center items-center">{course.status}</td>
                             <td >
 
@@ -59,30 +66,20 @@ const MyClass = () => {
                     </tbody>
                 </table>
             </div>
-            {/* <div className="text-black/70 bg-purple-50 p-14 my-10">
-                {
-                    course.map(event => <div key={event._id}
-                    >
-                        <div className=" grid md:grid-cols-2 bg-red-100 mb-10 group relative  items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black rounded">
-                            <div className=" h-[500px] w-[500px]">
-                                <img className="h-full w-full object-cover transition-transform duration-500 group-hover:-rotate-0 group-hover:-scale-x-50" src={event.classImage} alt="" />
-                            </div>
+            {
+                classes.map(course =>
+                    course.feedBack && <div key={course._id}>
+                        <img src={course.course_image} alt="" />
+                        <p>{course.feedBack}</p>
+                    </div>
+                )
+            }
 
-                            <div className="text-slate-950 card-body p-28">
-                                <h1 className="font-serif  text-3xl font-bold ">class Name:  {event.className}</h1>
-                                <p className="mb-3 text-lg italic "> Price:$ {event.price}</p>
-                                <p className="mb-3 text-lg italic "> Available Seat : {event.availabeSeat}</p>
-                                <div className="card-actions justify-end flex gap-4 ">
-                                    <button className="btn btn-outline border-0 border-y-2 btn-error  mt-3">Booking</button>
-                                    <button className="btn btn-outline border-0 border-y-2 btn-error mt-3">Read More</button>
-                                </div>
-                            </div>
-                           
-                        </div>
-                    </div>)
-                }
 
-            </div> */}
+
+
+
+
         </div>
     );
 };

@@ -71,11 +71,11 @@ export const router = createBrowserRouter([
         path: 'paymentHistory',
         element: <PaymentHistory></PaymentHistory>
       },
+      
       // Admin:
-
       {
         path: 'manageClasses',
-        element: <AdminRoute> <ManageClasses></ManageClasses></AdminRoute>
+        element: <AdminRoute><ManageClasses></ManageClasses></AdminRoute>
       },
       {
         path: 'feedBack',
