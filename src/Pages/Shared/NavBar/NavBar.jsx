@@ -22,13 +22,13 @@ const NavBar = () => {
 
     const handleToggle = (e) => {
         if (e.target.checked) {
-            setTheme("dark");
-        }
-        else {
             setTheme("light");
         }
+        else {
+            setTheme("dark");
+        }
     }
-
+    
 
 
     const handleLogOut = () => {
@@ -52,7 +52,7 @@ const NavBar = () => {
 
                 {/* this hidden checkbox controls the state */}
                 <input type="checkbox" onChange={handleToggle}
-                    checked={theme === "light" ? false : true}
+                checked={theme==="dark"? false:true}
                 />
 
                 {/* sun icon */}
