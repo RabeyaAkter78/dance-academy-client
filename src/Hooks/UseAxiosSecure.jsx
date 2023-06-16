@@ -6,7 +6,7 @@ import { AuthContext } from "../Providers/AuthProvider";
 
 
 const axiosSecure = axios.create({
-    baseURL: 'http://localhost:5000/',
+    baseURL: 'https://dance-academy-server-rabeyaakter78.vercel.app/',
 });
 
 

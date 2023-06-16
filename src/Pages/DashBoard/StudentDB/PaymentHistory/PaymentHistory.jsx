@@ -9,7 +9,7 @@ const PaymentHistory = () => {
     const [payments, setPayments] = useState([]);
     console.log(payments);
     useEffect(() => {
-        fetch('http://localhost:5000/payments')
+        fetch('https://dance-academy-server-rabeyaakter78.vercel.app/payments')
             .then(res => res.json())
             .then(data => {
                 setPayments(data);
@@ -56,8 +56,8 @@ const PaymentHistory = () => {
                                     </div>
                                 </div>
                             </div>
-                            <td>{data.name}</td>
-                            <td>{data.email}</td>
+                            <td>{user.displayName}</td>
+                            <td>{user.email}</td>
                             <td> $ {data.price}</td>
                             <td>{data.transectionId}</td>
                             <td>{data.date}</td>
