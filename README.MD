@@ -1,4 +1,4 @@
-* Live server link:https://dance-academy-72a3f.web.app/
+* Live server link: https://dance-academy-72a3f.web.app
 * website name: Dance Academy, logo:https://i.ibb.co/W68BLYR/dancelogo.png ,
 
 

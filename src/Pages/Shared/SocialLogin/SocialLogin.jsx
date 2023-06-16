@@ -17,7 +17,7 @@ const SocialLogin = () => {
                 console.log(loggedInUser);
 
                 const saveUser = { name: loggedInUser.displayName, email: loggedInUser.email }
-                fetch('https://dance-academy-server-rabeyaakter78.vercel.app/users', {
+                fetch('http://localhost:5000/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

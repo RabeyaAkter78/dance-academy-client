@@ -15,7 +15,7 @@ const ManageClasses = () => {
 
         queryKey: ["manageCourses"],
         queryFn: async () => {
-            const res = await fetch("https://dance-academy-server-rabeyaakter78.vercel.app/manageCourses");
+            const res = await fetch("http://localhost:5000/manageCourses");
             return res.json();
         }
     })
@@ -23,7 +23,7 @@ const ManageClasses = () => {
     console.log(datas);
 
     const handleAccept = (id) => {
-        fetch(`https://dance-academy-server-rabeyaakter78.vercel.app/aproveCourses/${id}`, {
+        fetch(`http://localhost:5000/aproveCourses/${id}`, {
             method: "PATCH"
         })
             .then(() => {
@@ -39,7 +39,7 @@ const ManageClasses = () => {
     }
 
     const handleDenied = (id) => {
-        fetch(`https://dance-academy-server-rabeyaakter78.vercel.app/deniedCourses/${id}`, {
+        fetch(`http://localhost:5000/deniedCourses/${id}`, {
             method: "PATCH"
         })
             .then(() => {

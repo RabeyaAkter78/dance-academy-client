@@ -15,7 +15,7 @@ const FeedBack = () => {
         const form = event.target;
         const formdata = form.textArea.value;
 
-        axios.patch(`https://dance-academy-server-rabeyaakter78.vercel.app/adminFeedBack/${data._id}`, { adminFeedBack: formdata })
+        axios.patch(`http://localhost:5000/adminFeedBack/${data._id}`, { adminFeedBack: formdata })
             .then(res => {
                 console.log(res.data)
                 if (res.data.acknowledged) {

@@ -8,7 +8,7 @@ const EnrolledClass = () => {
     const [payments, setPayments] = useState([]);
     console.log(payments);
     useEffect(() => {
-        fetch('https://dance-academy-server-rabeyaakter78.vercel.app/payments')
+        fetch('http://localhost:5000/payments')
             .then(res => res.json())
             .then(data => {
                 setPayments(data);
