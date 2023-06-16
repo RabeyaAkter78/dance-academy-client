@@ -22,6 +22,8 @@ const DashBoard = () => {
   const [isAdmin] = UseAdmin();
   const [isInstructor] = UseInstructor();
 
+  console.log(isAdmin, isInstructor);
+
   return (
     <div className="drawer drawer-mobile lg:drawer-open " >
 

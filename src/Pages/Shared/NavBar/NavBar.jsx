@@ -25,7 +25,7 @@ const NavBar = () => {
         <li><Link to="/instructors">INSTRUCTORS</Link></li>
         <li><Link to="/classes">CLASSES</Link></li>
         {user &&
-            <li><Link to="/dashboard">DASHBOARD {selecteddatas?.length || 0} </Link></li>
+            <li><Link to="/dashboard">DASHBOARD <span className="text-red-400">{selecteddatas?.length || 0}</span> </Link></li>
         }
 
         <li>

@@ -14,7 +14,7 @@ const Instructors = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/instructor')
+        fetch('https://dance-academy-server-rabeyaakter78.vercel.app/instructor')
             .then(res => res.json())
             .then(data => {
 

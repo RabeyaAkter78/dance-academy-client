@@ -59,7 +59,7 @@ const AuthProvider = ({ children }) => {
 
             // get and set jwt token:
             if (currentUser) {
-                axios.post('http://localhost:5000/jwt', { email: currentUser.email })
+                axios.post('https://dance-academy-server-rabeyaakter78.vercel.app/jwt', { email: currentUser.email })
                     .then(data => {
                         // console.log(data.data.token);
                         localStorage.setItem('access-token', data.data.token
@@ -71,7 +71,7 @@ const AuthProvider = ({ children }) => {
                 localStorage.removeItem('access-token');
             }
 
-            // console.log('current user:', currentUser);
+            console.log('current user:', currentUser);
             setLoading(false);
         });
         

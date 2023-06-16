@@ -6,6 +6,8 @@ const FeedBack = () => {
     const location = useLocation();
     const data = location.state;
     const course_image = data.course_image;
+    const ID = data._id;
+    const name = data.course_name
     console.log(data);
 
     const feedBack = (event) => {
@@ -13,7 +15,7 @@ const FeedBack = () => {
         const form = event.target;
         const formdata = form.textArea.value;
 
-        axios.patch(`http://localhost:5000/adminFeedBack/${data._id}`, { adminFeedBack: formdata })
+        axios.patch(`https://dance-academy-server-rabeyaakter78.vercel.app/adminFeedBack/${data._id}`, { adminFeedBack: formdata })
             .then(res => {
                 console.log(res.data)
                 if (res.data.acknowledged) {
@@ -37,25 +39,14 @@ const FeedBack = () => {
                     {/* head */}
                     <thead>
                         <tr>
-                            <th>
-                                <label>
-                                    <input type="checkbox" className="checkbox" />
-                                </label>
-                            </th>
-                            <th>Name</th>
-                            <th>Job</th>
-                            <th>Favorite Color</th>
-                            <th></th>
+                            <th>Image</th>
+                            <th>Class</th>
+                            <th>ID</th>
                         </tr>
                     </thead>
                     <tbody>
                         {/* row 1 */}
                         <tr>
-                            <th>
-                                <label>
-                                    <input type="checkbox" className="checkbox" />
-                                </label>
-                            </th>
                             <td>
                                 <div className="flex items-center space-x-3">
                                     <div className="avatar">
@@ -63,17 +54,12 @@ const FeedBack = () => {
                                             <img src={course_image} alt="Avatar Tailwind CSS Component" />
                                         </div>
                                     </div>
-                                    <div>
-
-                                    </div>
                                 </div>
                             </td>
                             <td>
-                                Zemlak, Daniel and Leannon
-                                <br />
-                                <span className="badge badge-ghost badge-sm">Desktop Support Technician</span>
+                                {ID}
                             </td>
-                            <td>Purple</td>
+                            <td>{name}</td>
                             <th>
                                 <button className="btn btn-ghost btn-xs">details</button>
                             </th>
