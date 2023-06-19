@@ -21,6 +21,7 @@ import Error from "../Pages/Error/Error";
 import AdminRoute from "./AdminRoute";
 import InstructorRoute from "./InstructorRoute";
 import FeedBack from "../Pages/DashBoard/Admin/ManageClasses/FeedBack";
+import Contackus from "../Pages/Contackus";
 
 
 export const router = createBrowserRouter([
@@ -41,6 +42,10 @@ export const router = createBrowserRouter([
         element: <SignUp></SignUp>
       },
       {
+        path: 'contact',
+        element:<Contackus></Contackus>
+      },
+      {
         path: 'classes',
         element: <PrivateRoute><Classes></Classes></PrivateRoute>
       },
@@ -57,7 +62,7 @@ export const router = createBrowserRouter([
       {
         path: 'selectedClass',
         element: <SelectedClass></SelectedClass>,
-        loader: ({ params }) => fetch(`https://dance-academy-server-rabeyaakter78.vercel.app/selectedClass/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/selectedClass/${params.id}`)
       },
       {
         path: 'enrolledClass',

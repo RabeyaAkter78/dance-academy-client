@@ -18,6 +18,7 @@ const Payment = () => {
     const instructor_name = data.instructor_name;
     const instructor_email = data.instructor_email;
     const seat_number = data.seat_number;
+    const  student_number=data. student_number;
     // console.log(classPrice, id, image);
 
     const price = parseFloat(classPrice.toFixed(2))
@@ -42,6 +43,7 @@ const Payment = () => {
                     instructor_name={instructor_name}
                     instructor_email={instructor_email}
                     seat_number={seat_number}
+                    student_number={student_number}
                 ></CheckoutForm>
 
             </Elements>

@@ -14,7 +14,7 @@ const Instructors = () => {
 
 
     useEffect(() => {
-        fetch('https://dance-academy-server-rabeyaakter78.vercel.app/instructor')
+        fetch('http://localhost:5000/instructor')
             .then(res => res.json())
             .then(data => {
 
@@ -30,8 +30,8 @@ const Instructors = () => {
     return (
         <div>
             <SectionTitle
-                heading={"Our Best Dancers"}
-                subHeading={"“When you dance, your purpose is not to get a certain place on the floor. It’s to enjoy every step along the way!”"}
+                subHeading={" "}
+                heading={"our Genious Instructors"}
             ></SectionTitle>
 
 

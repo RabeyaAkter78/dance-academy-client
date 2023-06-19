@@ -13,7 +13,7 @@ const useSelectCourseData = () => {
         queryKey: ['selectedClass', user?.email],
         enabled: !!user?.email && !!localStorage.getItem("access-token"),
         queryFn: async () => {
-            const response = await axiosSecure(`https://dance-academy-server-rabeyaakter78.vercel.app/selectedClass?email=${user?.email}`)
+            const response = await axiosSecure(`http://localhost:5000/selectedClass?email=${user?.email}`)
             return response.data;
         },
     })

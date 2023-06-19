@@ -7,7 +7,7 @@ const UpcomingEvents = () => {
 
 
     useEffect(() => {
-        fetch('https://dance-academy-server-rabeyaakter78.vercel.app/event')
+        fetch('http://localhost:5000/event')
             .then(res => res.json())
             .then(data => {
 

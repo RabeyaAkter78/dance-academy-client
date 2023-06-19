@@ -6,7 +6,7 @@ import { AuthContext } from "../../../../Providers/AuthProvider";
 import Swal from "sweetalert2";
 
 const CheckoutForm = ({ price, id, course_image, course_name, instructor_name,
-    instructor_email, seat_number }) => {
+    instructor_email, seat_number,student_number }) => {
     const { user } = useContext(AuthContext);
     // const [selecteddatas] = useSelectCourseData();
     const stripe = useStripe();
@@ -85,13 +85,14 @@ const CheckoutForm = ({ price, id, course_image, course_name, instructor_name,
                 course_image,
                 course_name,
                 price,
-                id, 
+                id,
                 instructor_name,
                 instructor_email,
-                seat_number
-
-
+                seat_number,
+                student_number
             }
+
+
             axiosSecure.post('/payments', payment)
                 .then(res => {
                     // console.log(res.data);
@@ -106,6 +107,9 @@ const CheckoutForm = ({ price, id, course_image, course_name, instructor_name,
                             timer: 1500
                         })
                     }
+                    // TODO: delete selected item from selected class page after payment :
+                    // if (res.data._id === id) {
+                    // }
                 });
 
         }

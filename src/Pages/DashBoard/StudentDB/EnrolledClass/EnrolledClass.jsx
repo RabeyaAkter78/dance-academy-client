@@ -6,16 +6,18 @@ import SectionTitle from "../../../Shared/SectionTitle/SectionTitle";
 const EnrolledClass = () => {
     const { user } = useContext(AuthContext);
     const [payments, setPayments] = useState([]);
-    console.log(payments);
+    // console.log(payments);
     useEffect(() => {
-        fetch(`https://dance-academy-server-rabeyaakter78.vercel.app/payments?email=${user?.email}`)
+        fetch(`http://localhost:5000/payments?email=${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setPayments(data);
                 console.log(data);
-            })
-    }, [])
 
+            })
+    }, []);
+
+   
 
     return (
         <div className="w-full h-full">
@@ -59,7 +61,7 @@ const EnrolledClass = () => {
                             <td>{data.instructor_email}</td>
                             <td>{data.seat_number}</td>
                             <td> $ {data.price}</td>
-
+                   
                         </tr>
 
                         )}
