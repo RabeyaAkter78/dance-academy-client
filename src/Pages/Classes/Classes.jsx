@@ -21,7 +21,7 @@ const Classes = () => {
 
     // get All class Api: 
     useEffect(() => {
-        fetch('http://localhost:5000/course')
+        fetch('https://dance-academy-server-teal.vercel.app/course')
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -42,7 +42,7 @@ const Classes = () => {
 
 
 
-        fetch("http://localhost:5000/selectedClass", {
+        fetch("https://dance-academy-server-teal.vercel.app/selectedClass", {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

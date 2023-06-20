@@ -4,9 +4,10 @@ import UseAxiosSecure from "../../../../Hooks/useAxiosSecure";
 import { AuthContext } from "../../../../Providers/AuthProvider";
 // import useSelectCourseData from "../../../../Hooks/useSelectCourseData";
 import Swal from "sweetalert2";
+import useSelectCourseData from "../../../../Hooks/useSelectCourseData";
 
 const CheckoutForm = ({ price, id, course_image, course_name, instructor_name,
-    instructor_email, seat_number,student_number }) => {
+    instructor_email, seat_number, student_number, selectedId }) => {
     const { user } = useContext(AuthContext);
     // const [selecteddatas] = useSelectCourseData();
     const stripe = useStripe();
@@ -16,7 +17,7 @@ const CheckoutForm = ({ price, id, course_image, course_name, instructor_name,
     const [clientSecret, setClientSecret] = useState('');
     const [processing, setProcessing] = useState(false);
     const [transectionId, setTransectionId] = useState('');
-
+    const [, refetch] = useSelectCourseData();
 
     useEffect(() => {
         axiosSecure.post('/createPayment',
@@ -95,17 +96,24 @@ const CheckoutForm = ({ price, id, course_image, course_name, instructor_name,
 
             axiosSecure.post('/payments', payment)
                 .then(res => {
-                    // console.log(res.data);
+                    console.log(res.data);
 
-                    if (res.data.insertedId) {
-                        // TODO:reset korte hobe:
-                        Swal.fire({
-                            position: '',
-                            icon: 'success',
-                            title: 'Payment Successful!',
-                            showConfirmButton: false,
-                            timer: 1500
+                    // selectedId
+                    if (res.data.insertResult.acknowledged && res.data.removeResult.acknowledged) {
+                        fetch(`https://dance-academy-server-teal.vercel.app/courses/${selectedId}`, {
+                            method: "PATCH"
                         })
+                            .then(() => {
+                                Swal.fire({
+                                    position: '',
+                                    icon: 'success',
+                                    title: 'Payment Successful!',
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                })
+                            })
+                        refetch();
+
                     }
                     // TODO: delete selected item from selected class page after payment :
                     // if (res.data._id === id) {

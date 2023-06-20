@@ -7,7 +7,7 @@ const UpcomingEvents = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/event')
+        fetch('https://dance-academy-server-teal.vercel.app/event')
             .then(res => res.json())
             .then(data => {
 
@@ -20,7 +20,7 @@ const UpcomingEvents = () => {
 
 
     return (
-        <div className="">
+        <div className=" mb-16 mt-16">
             <SectionTitle
                 heading={"Upcoming Events"}
                 subHeading={"Don't Miss The Chance.Registration Now For The Upcomming Events! lets Have more FUN"}

@@ -7,7 +7,7 @@ const PopularclassNamees = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/class')
+        fetch('https://dance-academy-server-teal.vercel.app/class')
             .then(res => res.json())
             .then(data => {
 
@@ -28,7 +28,7 @@ const PopularclassNamees = () => {
 
 
 
-            <div className="flex min-h-screen items-center justify-center bg-pink-50 my-14">
+            <div className="flex min-h-screen items-center justify-center bg-pink-50 mb-14">
                 <div className="grid grid-cols-1 md:grid-cols-3 py-5 gap-12">
                     {
                         classes?.slice(0, 6).map(course => <div key={course._id}
@@ -39,14 +39,14 @@ const PopularclassNamees = () => {
                                 </div>
                                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
                                 <div className="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0">
-                                    <h1 className="font-serif  text-3xl font-bold text-white">{course.course_name}</h1>
+                                    <h1 className="font-serif  text-3xl font-bold pb-20 text-white">{course.course_name}</h1>
                                     <p className="mb-3 text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">Total Seat: {course.seat_number}</p>
 
                                     <p className="mb-3 text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">Enrolled Student: {course.student_number}</p>
 
                                     <p className="mb-3 text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">Available seat: {course.seat_number - course.student_number}</p>
 
-                                    <button className="btn btn-outline border-0 border-y-4 rounded bg-red-900 py-2 px-3  text-sm  text-white shadow shadow-black/60">Select</button>
+                                    {/* <button className="btn btn-outline border-0 border-y-4 rounded bg-red-900 py-2 px-3  text-sm  text-white shadow shadow-black/60">Select</button> */}
                                 </div>
                             </div>
 

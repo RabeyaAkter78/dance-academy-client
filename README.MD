@@ -12,4 +12,4 @@
 * uses package are: @tanstack/react-query,axios,firebase,react,react-awesome-slider,react-dom,react-helmet-async,react-hook-form,react-icons,react-query,react-router-dom,sort-by,sweetalert2.
 * for more information you can visit our website.
 
-<!-- http://localhost:5000/ -->
+<!-- https://dance-academy-server-teal.vercel.app/ -->

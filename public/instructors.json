@@ -1,50 +1,69 @@
 [
-    {
-     
-      "name": "John Smith",
-      "image": "https://i.ibb.co/ykCmnxv/5b9154c93cccd11b008b45a5-width-874-format-jpeg.jpg",
-      "email": "john.smith@example.com",
-      "classes_taken": 50,
-      "classes": ["Salsa Dancing", "Bachata", "Merengue"]
-    },
-    {
-     
-      "name": "Emily Johnson",
-      "image": "https://i.ibb.co/LQHdBpb/Diop-main.jpg",
-      "email": "emily.johnson@example.com",
-      "classes_taken": 40,
-      "classes": ["Hip Hop Dance", "Street Jazz"]
-    },
-    {
-      
-      "name": "Michael Davis",
-      "image": "https://i.ibb.co/mB1rc5D/images-q-tbn-ANd9-Gc-RGHl-Ym-Rl8j-Gsz-HMv-U9b-V-8v2-Scq-bz8-NJNurr-FXEi-Fd-XOt-Vva-OBub-0algko-EMo-E.jpg",
-      "email": "michael.davis@example.com",
-      "classes_taken": 35,
-      "classes": ["Contemporary Dance", "Modern Ballet"]
-    },
-    {
-      
-      "name": "Sarah Thompson",
-      "image": "https://i.ibb.co/mS6zLWD/3aab8d8e809bba6cc0da0635bd8fd3a3.jpg",
-      "email": "sarah.thompson@example.com",
-      "classes_taken": 30,
-      "classes": ["Tap Dance", "Swing Dance"]
-    },
-    {
-     
-      "name": "David Rodriguez",
-      "image": "https://i.ibb.co/mC5WDtw/images-q-tbn-ANd9-Gc-SEzx-F3a0-NRKRe7e6c-Nwdy-Kbfzl5-Qu-Va-QJHw-usqp-CAU.jpg",
-      "email": "david.rodriguez@example.com",
-      "classes_taken": 25,
-      "classes": ["Bollywood Dance", "Kathak"]
-    },
-    {
-   
-      "name": "Linda Wilson",
-      "image": "https://i.ibb.co/7NqJxRS/images-q-tbn-ANd9-Gc-QQesg-5-x-Ml-Joso-C-Rzz-NIf0-AOPCBXXl-Rt-I7-UCmu-B3uqe9u-CB4yq33-Xm-FTx8-ULq5g.jpg",
-      "email": "linda.wilson@example.com",
-      "classes_taken": 20,
-      "classes": ["Ballet", "Jazz Dance"]
-    }
-  ]
+  {
+    "name": "John Smith",
+    "role": "instructor",
+    "image": "https://i.ibb.co/ykCmnxv/5b9154c93cccd11b008b45a5-width-874-format-jpeg.jpg",
+    "email": "john.smith@example.com",
+    "classes_taken": 50,
+    "classes": [
+      "Salsa Dancing",
+      "Bachata",
+      "Merengue"
+    ]
+  },
+  {
+    "name": "Emily Johnson",
+    "role": "instructor",
+    "image": "https://i.ibb.co/LQHdBpb/Diop-main.jpg",
+    "email": "emily.johnson@example.com",
+    "classes_taken": 40,
+    "classes": [
+      "Hip Hop Dance",
+      "Street Jazz"
+    ]
+  },
+  {
+    "name": "Michael Davis",
+    "role": "instructor",
+    "image": "https://i.ibb.co/mB1rc5D/images-q-tbn-ANd9-Gc-RGHl-Ym-Rl8j-Gsz-HMv-U9b-V-8v2-Scq-bz8-NJNurr-FXEi-Fd-XOt-Vva-OBub-0algko-EMo-E.jpg",
+    "email": "michael.davis@example.com",
+    "classes_taken": 35,
+    "classes": [
+      "Contemporary Dance",
+      "Modern Ballet"
+    ]
+  },
+  {
+    "name": "Sarah Thompson",
+    "role": "instructor",
+    "image": "https://i.ibb.co/mS6zLWD/3aab8d8e809bba6cc0da0635bd8fd3a3.jpg",
+    "email": "sarah.thompson@example.com",
+    "classes_taken": 30,
+    "classes": [
+      "Tap Dance",
+      "Swing Dance"
+    ]
+  },
+  {
+    "name": "David Rodriguez",
+    "role": "instructor",
+    "image": "https://i.ibb.co/mC5WDtw/images-q-tbn-ANd9-Gc-SEzx-F3a0-NRKRe7e6c-Nwdy-Kbfzl5-Qu-Va-QJHw-usqp-CAU.jpg",
+    "email": "david.rodriguez@example.com",
+    "classes_taken": 25,
+    "classes": [
+      "Bollywood Dance",
+      "Kathak"
+    ]
+  },
+  {
+    "name": "Linda Wilson",
+    "role": "instructor",
+    "image": "https://i.ibb.co/7NqJxRS/images-q-tbn-ANd9-Gc-QQesg-5-x-Ml-Joso-C-Rzz-NIf0-AOPCBXXl-Rt-I7-UCmu-B3uqe9u-CB4yq33-Xm-FTx8-ULq5g.jpg",
+    "email": "linda.wilson@example.com",
+    "classes_taken": 20,
+    "classes": [
+      "Ballet",
+      "Jazz Dance"
+    ]
+  }
+]

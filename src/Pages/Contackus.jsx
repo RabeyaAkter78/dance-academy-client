@@ -1,4 +1,4 @@
-import { FaLocationArrow, FaMailBulk, FaPhone, FaPhoneAlt, FaSearchLocation, FaVoicemail } from "react-icons/fa";
+import { FaLocationArrow, FaMailBulk, FaPhoneAlt } from "react-icons/fa";
 import SectionTitle from "./Shared/SectionTitle/SectionTitle";
 
 const Contackus = () => {
@@ -17,7 +17,7 @@ const Contackus = () => {
 
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <div className="card-body">
-                            <h4 className="font-medium text-2xl">We're just a click away! feel free to write us.</h4>
+                            <h4 className="font-medium text-2xl">We are just a click away! feel free to write us.</h4>
                             <div className="form-control">
                                 <input type="text" placeholder="Your Name" className="input input-bordered" />
                             </div>

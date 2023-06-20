@@ -7,7 +7,7 @@ const SectionTitle = ({ heading, subHeading }) => {
 
 
 
-        <div className="  mx-auto text-center md:w-6/12 my-24 font-serif">
+        <div className="  mx-auto text-center md:w-6/12 mb-24 font-serif">
             <motion.h3
                 initial={{ x: -500 }}
                 animate={{ x:0 }}

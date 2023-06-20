@@ -9,7 +9,7 @@ const MyClass = () => {
     const [classes, setClasses] = useState([]);
     console.log(classes);
     useEffect(() => {
-        fetch(`http://localhost:5000/myClass?email=${user?.email}`)
+        fetch(`https://dance-academy-server-teal.vercel.app/myClass?email=${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setClasses(data);

@@ -62,7 +62,7 @@ export const router = createBrowserRouter([
       {
         path: 'selectedClass',
         element: <SelectedClass></SelectedClass>,
-        loader: ({ params }) => fetch(`http://localhost:5000/selectedClass/${params.id}`)
+        loader: ({ params }) => fetch(`https://dance-academy-server-teal.vercel.app/selectedClass/${params.id}`)
       },
       {
         path: 'enrolledClass',

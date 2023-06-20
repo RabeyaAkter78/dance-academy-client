@@ -8,7 +8,7 @@ const EnrolledClass = () => {
     const [payments, setPayments] = useState([]);
     // console.log(payments);
     useEffect(() => {
-        fetch(`http://localhost:5000/payments?email=${user?.email}`)
+        fetch(`https://dance-academy-server-teal.vercel.app/payments?email=${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setPayments(data);
