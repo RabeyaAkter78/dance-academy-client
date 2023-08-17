@@ -4,9 +4,6 @@ import { motion } from "framer-motion";
 
 const SectionTitle = ({ heading, subHeading }) => {
     return (
-
-
-
         <div className="  mx-auto text-center md:w-6/12 mb-24 font-serif">
             <motion.h3
                 initial={{ x: -500 }}

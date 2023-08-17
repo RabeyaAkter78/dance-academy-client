@@ -16,7 +16,7 @@ const DashBoard = () => {
 
 
   // TODO: load data from the server to have dynamic isAdmin based on data:
-  // const isAdmin = false;
+  // const isAdmin = true;
   // const isInstructor = false;
   // // const isStudent=true;
   const [isAdmin] = UseAdmin();
