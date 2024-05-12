@@ -4,19 +4,14 @@ import { useEffect } from "react";
 
 const UpcomingEvents = () => {
     const [events, setEvents] = useState([])
-
-
     useEffect(() => {
         fetch('https://dance-academy-server-teal.vercel.app/event')
             .then(res => res.json())
             .then(data => {
-
                 setEvents(data);
                 // console.log(data);
-
-
             })
-    }, [])
+    }, []);
 
 
     return (
@@ -38,20 +33,26 @@ const UpcomingEvents = () => {
                             <div className="text-slate-950 card-body p-28">
                                 <h1 className="font-serif  text-3xl font-bold ">{event.event_name}</h1>
                                 <p className="mb-3 text-lg italic  ">{event.details}</p>
-                                <p className="mb-3 text-lg italic "> PRICE:{event.price}</p>
+                               
                                 <div className="card-actions justify-end flex gap-4 ">
-                                    <button className="btn btn-outline border-0 border-y-2 btn-error  mt-3">Booking</button>
-                                    <button className="btn btn-outline border-0 border-y-2 btn-error mt-3">Read More</button>
+                                    <button className="btn btn-outline border-0 border-y-2 btn-error mt-3">Booking</button>
+                                    <button className="btn btn-outline border-0 border-y-2 btn-error mt-3" onClick={() => document.getElementById('my_modal_5').showModal()}>Read More</button>
+                                    <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
+                                        <div className="modal-box bg-pink-100 font-semibold">
+                                            <img className="p-5 w-full" src={event.image} alt={event.event_name} />
+                                            <h3 className="font-bold text-lg">event Name: {event.event_name}</h3>
+                                            <p className="py-4">Event ID: {event._id}</p>
+                                            <p className="py-4"><ul>event Details:</ul> {event.details}</p>
+                                            <p className="mb-3 text-lg italic ">Ticket Price: 50 $</p>
+                                            <div className="modal-action">
+                                                <form method="dialog">
+                                                    <button className="btn btn-outline border-0 border-y-2 btn-error mt-3">Close</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </dialog>
                                 </div>
                             </div>
-                            {/* <div className="card-body">
-                                <h2 className="card-title">{event.event_name}</h2>
-                                <p>{event.details}</p>
-                                <p>{event.price}</p>
-                                <div className="card-actions justify-end">
-                                    <button className="btn btn-primary">Listen</button>
-                                </div>
-                            </div> */}
                         </div>
                     </div>)
                 }
