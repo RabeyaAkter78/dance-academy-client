@@ -22,6 +22,7 @@ import AdminRoute from "./AdminRoute";
 import InstructorRoute from "./InstructorRoute";
 import FeedBack from "../Pages/DashBoard/Admin/ManageClasses/FeedBack";
 import ContactUs from "../Pages/ContactUs";
+import BookEvents from "../Pages/UpcomingEvents/BookEvents";
 
 
 export const router = createBrowserRouter([
@@ -43,7 +44,7 @@ export const router = createBrowserRouter([
       },
       {
         path: 'contact',
-        element:<ContactUs></ContactUs>
+        element: <ContactUs></ContactUs>
       },
       {
         path: 'classes',
@@ -52,7 +53,11 @@ export const router = createBrowserRouter([
       {
         path: 'instructors',
         element: <PrivateRoute><Instructors></Instructors></PrivateRoute>
-      }
+      },
+      {
+        path: "/bookEvents",
+        element:<BookEvents></BookEvents>
+      },
     ]
   },
   {
@@ -100,6 +105,7 @@ export const router = createBrowserRouter([
         path: 'myClass',
         element: <InstructorRoute><MyClass></MyClass></InstructorRoute>
       },
+     
 
     ]
   },

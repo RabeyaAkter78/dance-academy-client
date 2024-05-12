@@ -8,7 +8,6 @@ import UseAxiosSecure from "../../../../Hooks/useAxiosSecure";
 
 
 const img_hosting_token = import.meta.env.VITE_image_hosting_token
-// console.log(img_hosting_token);
 
 const AddClass = () => {
     const [axiosSecure] = UseAxiosSecure();
@@ -18,12 +17,10 @@ const AddClass = () => {
     const { register, reset, handleSubmit, formState: { errors } } = useForm();
 
     const img_hosting_url = `https://api.imgbb.com/1/upload?key=${img_hosting_token}`
-    // console.log(img_hosting_url);
 
 
 
     const onSubmit = data => {
-        // console.log(data);
 
         const formData = new FormData();
         formData.append('image', data.course_image[0])
@@ -115,7 +112,7 @@ const AddClass = () => {
                                 <span className="label-text">Class Image</span>
                             </label>
                             <input {...register("course_image")} type="file" className="file-input file-input-bordered w-full max-w-xs" />
-                            {/* <input {...register("course_Image")} type="file" className="file-input file-input-bordered w-full max-w-xs" /> */}
+                          
 
                         </div>
 
@@ -124,7 +121,7 @@ const AddClass = () => {
                                 <span className="label-text">
                                     instructor_name</span>
                             </label>
-                            <input type="text" {...register("instructor_name")} placeholder="Instructor Name" className="input input - bordered" defaultValue={user?.displayName} required readOnly />
+                            <input type="text" {...register("instructor_name")} placeholder="Instructor Name" className=" input - bordered" defaultValue={user?.displayName} required readOnly />
                         </div>
 
                         <div className="form-control">

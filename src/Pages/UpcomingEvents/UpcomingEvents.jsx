@@ -1,6 +1,7 @@
 import { useState } from "react";
 import SectionTitle from "../Shared/SectionTitle/SectionTitle";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const UpcomingEvents = () => {
     const [events, setEvents] = useState([])
@@ -18,7 +19,7 @@ const UpcomingEvents = () => {
         <div className=" mb-16 mt-16">
             <SectionTitle
                 heading={"Upcoming Events"}
-                subHeading={"Don't Miss The Chance.Registration Now For The Upcomming Events! lets Have more FUN"}
+                subHeading={"Don't Miss The Chance.Registration Now For The Upcoming Events! lets Have more FUN"}
             ></SectionTitle>
 
             <div className="text-black/70 bg-purple-50 p-14 my-10">
@@ -33,9 +34,11 @@ const UpcomingEvents = () => {
                             <div className="text-slate-950 card-body p-28">
                                 <h1 className="font-serif  text-3xl font-bold ">{event.event_name}</h1>
                                 <p className="mb-3 text-lg italic  ">{event.details}</p>
-                               
+
                                 <div className="card-actions justify-end flex gap-4 ">
-                                    <button className="btn btn-outline border-0 border-y-2 btn-error mt-3">Booking</button>
+                                    <Link to={"/bookEvents"}>
+                                        <button className="btn btn-outline border-0 border-y-2 btn-error mt-3">Booking</button>
+                                    </Link>
                                     <button className="btn btn-outline border-0 border-y-2 btn-error mt-3" onClick={() => document.getElementById('my_modal_5').showModal()}>Read More</button>
                                     <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
                                         <div className="modal-box bg-pink-100 font-semibold">
