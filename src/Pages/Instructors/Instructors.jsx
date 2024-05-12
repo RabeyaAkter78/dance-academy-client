@@ -20,8 +20,6 @@ const Instructors = () => {
 
                 setInstructors(data);
                 console.log(data);
-
-
             })
     }, [])
 

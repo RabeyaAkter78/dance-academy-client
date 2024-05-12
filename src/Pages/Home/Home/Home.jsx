@@ -3,8 +3,8 @@ import Banner from "../Banner/Banner";
 import PopularClasses from "../../PopularClasses/PopularClasses";
 import Instructors from "../../Instructors/Instructors";
 import UpcomingEvents from "../../UpcomingEvents/UpcomingEvents";
-import Contackus from "../../Contackus";
 import AboutUs from "../../AboutUs/AboutUs";
+import ContactUs from "../../ContactUs";
 
 const Home = () => {
     return (
@@ -18,7 +18,7 @@ const Home = () => {
             <UpcomingEvents></UpcomingEvents>
             <AboutUs></AboutUs>
 
-            <Contackus></Contackus>
+            <ContactUs></ContactUs>
         </div>
     );
 };

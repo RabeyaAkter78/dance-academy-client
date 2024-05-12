@@ -21,7 +21,7 @@ import Error from "../Pages/Error/Error";
 import AdminRoute from "./AdminRoute";
 import InstructorRoute from "./InstructorRoute";
 import FeedBack from "../Pages/DashBoard/Admin/ManageClasses/FeedBack";
-import Contackus from "../Pages/Contackus";
+import ContactUs from "../Pages/ContactUs";
 
 
 export const router = createBrowserRouter([
@@ -43,7 +43,7 @@ export const router = createBrowserRouter([
       },
       {
         path: 'contact',
-        element:<Contackus></Contackus>
+        element:<ContactUs></ContactUs>
       },
       {
         path: 'classes',

@@ -31,15 +31,10 @@ const Classes = () => {
 
 
 
-
     // selected class api:
     const handleSelect = (course) => {
         const { _id, ...rest } = course;
         const selectedCourse = { selectedId: _id, ...rest, email: user?.email };
-
-
-
-
 
 
         fetch("https://dance-academy-server-teal.vercel.app/selectedClass", {

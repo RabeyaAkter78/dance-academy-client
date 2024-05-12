@@ -7,10 +7,8 @@ import useSelectCourseData from "../../../Hooks/useSelectCourseData";
 
 const NavBar = () => {
     const [selecteddatas] = useSelectCourseData();
-    // console.log(selecteddatas);
     const { user, logOut } = useContext(AuthContext);
-    // console.log(user);
-
+    // Dark Theme
     const [theme, setTheme] = useState(localStorage.getItem('theme') ? localStorage.getItem('theme') : "light");
 
     useEffect(() => {
@@ -28,7 +26,7 @@ const NavBar = () => {
             setTheme("dark");
         }
     }
-    
+
 
 
     const handleLogOut = () => {
@@ -40,9 +38,10 @@ const NavBar = () => {
     }
 
     const navOptions = <>
-        <li><Link to="/">HOME</Link></li>
-        <li><Link to="/instructors">INSTRUCTORS</Link></li>
-        <li><Link to="/classes">CLASSES</Link></li>
+        <li><Link to="/"  >HOME</Link></li>
+        {/* <li><Link to="/instructors" >INSTRUCTORS</Link></li> */}
+        <li><Link to="/instructors" >INSTRUCTORS</Link></li>
+        <li><Link to="/classes" className="active">CLASSES</Link></li>
         {user &&
             <li><Link to="/dashboard">DASHBOARD <span className="text-red-400">{selecteddatas?.length || 0}</span> </Link></li>
         }
@@ -52,7 +51,7 @@ const NavBar = () => {
 
                 {/* this hidden checkbox controls the state */}
                 <input type="checkbox" onChange={handleToggle}
-                checked={theme==="dark"? false:true}
+                    checked={theme === "dark" ? false : true}
                 />
 
                 {/* sun icon */}
