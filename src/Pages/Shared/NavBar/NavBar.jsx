@@ -41,7 +41,7 @@ const NavBar = () => {
         <li><Link to="/"  >HOME</Link></li>
         {/* <li><Link to="/instructors" >INSTRUCTORS</Link></li> */}
         <li><Link to="/instructors" >INSTRUCTORS</Link></li>
-        <li><Link to="/classes" className="active">CLASSES</Link></li>
+        <li><Link to="/classes">CLASSES</Link></li>
         {user &&
             <li><Link to="/dashboard">DASHBOARD <span className="text-red-400">{selecteddatas?.length || 0}</span> </Link></li>
         }
@@ -89,7 +89,7 @@ const NavBar = () => {
                         {navOptions}
                     </ul>
                 </div>
-                <div className="navbar-end text-white mt-4">
+                <div className="navbar-end md:navbar-end text-white mt-4">
                     <div className="tooltip" data-tip={user?.displayName}>
                         {user && <img className="rounded-full mr-4" style={{ height: '50px' }} src={user?.photoURL} />
                         }

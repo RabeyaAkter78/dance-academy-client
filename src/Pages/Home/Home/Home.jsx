@@ -8,7 +8,7 @@ import ContactUs from "../../ContactUs";
 
 const Home = () => {
     return (
-        <div>
+        <div className="overflow-hidden">
             <Helmet>
                 <title>Dance | Home</title>
             </Helmet>
