@@ -6,13 +6,7 @@ import Swal from "sweetalert2";
 
 
 const ManageClasses = () => {
-
-
-
-
     const { data: datas = [], refetch } = useQuery({
-
-
         queryKey: ["manageCourses"],
         queryFn: async () => {
             const res = await fetch("https://dance-academy-server-teal.vercel.app/manageCourses");
